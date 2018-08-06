@@ -44,10 +44,11 @@ object StringPairUtil {
 
     def main(args: Array[String]): Unit = {
         val s1 = "东边山上有个太阳"; val s2 = "西边草坪上也有个太岁"
-//        val s1 = "东边山上有个太阳，太阳下山"; val s2 = "西边草坪上也有个太阳，太阳上山"
+        //        val s1 = "东边山上有个太阳，太阳下山"; val s2 = "西边草坪上也有个太阳，太阳上山"
         println(maximum_common_subset(s1, s2))
 
-//        println(Set(1,2,3)++ Set(2,3,4))
+        //        println(Set(1,2,3)++ Set(2,3,4))
 
     }
 }
+
