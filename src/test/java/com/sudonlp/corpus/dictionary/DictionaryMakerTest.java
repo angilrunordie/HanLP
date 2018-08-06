@@ -84,8 +84,8 @@ public class DictionaryMakerTest extends TestCase
 //
 //    public void testAdjustNGram() throws Exception
 //    {
-//        IOUtil.LineIterator iterator = new IOUtil.LineIterator(HanLP.Config.BiGramDictionaryPath);
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(HanLP.Config.BiGramDictionaryPath + "adjust.txt"), "UTF-8"));
+//        IOUtil.LineIterator iterator = new IOUtil.LineIterator(SudoNLP.Config.BiGramDictionaryPath);
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SudoNLP.Config.BiGramDictionaryPath + "adjust.txt"), "UTF-8"));
 //        while (iterator.hasNext())
 //        {
 //            String line = iterator.next();
@@ -110,7 +110,7 @@ public class DictionaryMakerTest extends TestCase
 //    public void testRemoveLabelD() throws Exception
 //    {
 //        Set<String> nameFollowers = new TreeSet<String>();
-//        IOUtil.LineIterator lineIterator = new IOUtil.LineIterator(HanLP.Config.BiGramDictionaryPath);
+//        IOUtil.LineIterator lineIterator = new IOUtil.LineIterator(SudoNLP.Config.BiGramDictionaryPath);
 //        while (lineIterator.hasNext())
 //        {
 //            String line = lineIterator.next();
@@ -120,7 +120,7 @@ public class DictionaryMakerTest extends TestCase
 //                nameFollowers.add(words[1]);
 //            }
 //        }
-//        DictionaryMaker dictionary = DictionaryMaker.load(HanLP.Config.PersonDictionaryPath);
+//        DictionaryMaker dictionary = DictionaryMaker.load(SudoNLP.Config.PersonDictionaryPath);
 //        for (Map.Entry<String, Item> entry : dictionary.entrySet())
 //        {
 //            String key = entry.getKey();
@@ -138,7 +138,7 @@ public class DictionaryMakerTest extends TestCase
 //            }
 //        }
 //
-//        dictionary.saveTxtTo(HanLP.Config.PersonDictionaryPath);
+//        dictionary.saveTxtTo(SudoNLP.Config.PersonDictionaryPath);
 //    }
 
 //    public void testSingleDocument() throws Exception

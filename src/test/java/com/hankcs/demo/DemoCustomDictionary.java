@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.dictionary.BaseSearcher;
 import com.sudonlp.dictionary.CoreDictionary;
@@ -58,7 +58,7 @@ public class DemoCustomDictionary
         }
 
         // 标准分词
-        System.out.println(HanLP.segment(text));
+        System.out.println(SudoNLP.segment(text));
 
         // Note:动态增删不会影响词典文件
         // 目前CustomDictionary使用DAT储存词典文件中的词语，用BinTrie储存动态加入的词语，前者性能高，后者性能低

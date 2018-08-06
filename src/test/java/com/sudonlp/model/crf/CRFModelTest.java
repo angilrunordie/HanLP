@@ -1,19 +1,10 @@
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.bintrie.BinTrie;
-import com.sudonlp.corpus.document.CorpusLoader;
-import com.sudonlp.corpus.document.Document;
-import com.sudonlp.corpus.document.sentence.word.IWord;
-import com.sudonlp.corpus.document.sentence.word.Word;
 import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.seg.CRF.CRFSegment;
 import com.sudonlp.utility.Predefine;
 import junit.framework.TestCase;
-
-import java.io.*;
-import java.util.List;
 
 public class CRFModelTest extends TestCase
 {
@@ -56,7 +47,7 @@ public class CRFModelTest extends TestCase
 
 //    public void testSegment() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        CRFSegment segment = new CRFSegment();
 ////        segment.enablePartOfSpeechTagging(true);
 //        System.out.println(segment.seg("乐视超级手机能否承载贾布斯的生态梦"));
@@ -135,7 +126,7 @@ public class CRFModelTest extends TestCase
 //    {
 //        String text = "2.34米";
 ////        System.out.println(CRFSegment.atomSegment(text.toCharArray()));
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        CRFSegment segment = new CRFSegment();
 //        System.out.println(segment.seg(text));
 //    }
@@ -150,7 +141,7 @@ public class CRFModelTest extends TestCase
 
     public void testLoadModelWithBiGramFeature() throws Exception
     {
-        String path = HanLP.Config.CRFSegmentModelPath + Predefine.BIN_EXT;
+        String path = SudoNLP.Config.CRFSegmentModelPath + Predefine.BIN_EXT;
         CRFModel model = new CRFModel(new BinTrie<FeatureFunction>());
         model.load(ByteArray.createByteArray(path));
 

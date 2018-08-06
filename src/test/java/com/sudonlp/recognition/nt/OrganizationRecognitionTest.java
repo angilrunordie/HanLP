@@ -1,23 +1,12 @@
 package com.sudonlp.recognition.nt;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.DictionaryMaker;
-import com.sudonlp.corpus.dictionary.item.Item;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.dictionary.common.CommonStringDictionary;
-import com.sudonlp.seg.Dijkstra.DijkstraSegment;
-import com.sudonlp.utility.LexiconUtility;
 import junit.framework.TestCase;
-
-import java.util.Map;
-import java.util.Set;
 
 public class OrganizationRecognitionTest extends TestCase
 {
 //    public void testSeg() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        DijkstraSegment segment = new DijkstraSegment();
 //        segment.enableCustomDictionary(false);
 //
@@ -43,7 +32,7 @@ public class OrganizationRecognitionTest extends TestCase
 //
 //    public void testRemoveP() throws Exception
 //    {
-//        DictionaryMaker maker = DictionaryMaker.load(HanLP.Config.OrganizationDictionaryPath);
+//        DictionaryMaker maker = DictionaryMaker.load(SudoNLP.Config.OrganizationDictionaryPath);
 //        for (Map.Entry<String, Item> entry : maker.entrySet())
 //        {
 //            String word = entry.getKey();
@@ -56,6 +45,6 @@ public class OrganizationRecognitionTest extends TestCase
 //                item.removeLabel("P");
 //            }
 //        }
-//        maker.saveTxtTo(HanLP.Config.OrganizationDictionaryPath);
+//        maker.saveTxtTo(SudoNLP.Config.OrganizationDictionaryPath);
 //    }
 }

@@ -11,7 +11,7 @@
  */
 package com.sudonlp.seg.NShort;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.Dijkstra;
 import com.sudonlp.recognition.nr.JapanesePersonRecognition;
 import com.sudonlp.recognition.nr.PersonRecognition;
@@ -24,12 +24,6 @@ import com.sudonlp.seg.common.Graph;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.seg.common.Vertex;
 import com.sudonlp.seg.common.WordNet;
-import com.sudonlp.algorithm.Dijkstra;
-import com.sudonlp.recognition.nr.JapanesePersonRecognition;
-import com.sudonlp.recognition.nr.PersonRecognition;
-import com.sudonlp.recognition.nr.TranslatedPersonRecognition;
-import com.sudonlp.recognition.ns.PlaceRecognition;
-import com.sudonlp.recognition.nt.OrganizationRecognition;
 
 import java.util.*;
 
@@ -52,7 +46,7 @@ public class NShortSegment extends WordBasedSegment
         boolean NERexists = false;
         for (List<Vertex> vertexList : coarseResult)
         {
-            if (HanLP.Config.DEBUG)
+            if (SudoNLP.Config.DEBUG)
             {
                 System.out.println("粗分结果" + convert(vertexList, false));
             }
@@ -96,7 +90,7 @@ public class NShortSegment extends WordBasedSegment
         {
             Graph graph = generateBiGraph(wordNetOptimum);
             vertexList = Dijkstra.compute(graph);
-            if (HanLP.Config.DEBUG)
+            if (SudoNLP.Config.DEBUG)
             {
                 System.out.printf("细分词网：\n%s\n", wordNetOptimum);
                 System.out.printf("细分词图：%s\n", graph.printByTo());
@@ -149,7 +143,7 @@ public class NShortSegment extends WordBasedSegment
         ///////////////生成词图////////////////////
         Graph graph = generateBiGraph(wordNetAll);
 //        logger.trace(graph.toString());
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.printf("打印词图：%s\n", graph.printByTo());
         }

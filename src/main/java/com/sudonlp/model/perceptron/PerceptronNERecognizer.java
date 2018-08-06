@@ -10,7 +10,7 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.perceptron.feature.FeatureMap;
 import com.sudonlp.model.perceptron.instance.Instance;
 import com.sudonlp.model.perceptron.model.LinearModel;
@@ -18,14 +18,6 @@ import com.sudonlp.model.perceptron.tagset.NERTagSet;
 import com.sudonlp.model.perceptron.common.TaskType;
 import com.sudonlp.model.perceptron.instance.NERInstance;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.tokenizer.lexical.NERecognizer;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.perceptron.common.TaskType;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.Instance;
-import com.sudonlp.model.perceptron.instance.NERInstance;
-import com.sudonlp.model.perceptron.model.LinearModel;
-import com.sudonlp.model.perceptron.tagset.NERTagSet;
 import com.sudonlp.tokenizer.lexical.NERecognizer;
 
 import java.io.IOException;
@@ -61,7 +53,7 @@ public class PerceptronNERecognizer extends PerceptronTagger implements NERecogn
      */
     public PerceptronNERecognizer() throws IOException
     {
-        this(HanLP.Config.PerceptronNERModelPath);
+        this(SudoNLP.Config.PerceptronNERModelPath);
     }
 
     public String[] recognize(String[] wordArray, String[] posArray)

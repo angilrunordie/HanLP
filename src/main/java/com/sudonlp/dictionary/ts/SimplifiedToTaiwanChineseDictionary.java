@@ -11,12 +11,11 @@
  */
 package com.sudonlp.dictionary.ts;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 
 import java.util.TreeMap;
 
-import static com.sudonlp.utility.Predefine.BIN_EXT;
 import static com.sudonlp.utility.Predefine.logger;
 
 /**
@@ -29,13 +28,13 @@ public class SimplifiedToTaiwanChineseDictionary extends BaseChineseDictionary
     static
     {
         long start = System.currentTimeMillis();
-        String datPath = HanLP.Config.tcDictionaryRoot + "s2tw";
+        String datPath = SudoNLP.Config.tcDictionaryRoot + "s2tw";
         if (!loadDat(datPath, trie))
         {
             TreeMap<String, String> s2t = new TreeMap<String, String>();
             TreeMap<String, String> t2tw = new TreeMap<String, String>();
-            if (!load(s2t, false, HanLP.Config.tcDictionaryRoot + "s2t.txt") ||
-                    !load(t2tw, false, HanLP.Config.tcDictionaryRoot + "t2tw.txt"))
+            if (!load(s2t, false, SudoNLP.Config.tcDictionaryRoot + "s2t.txt") ||
+                    !load(t2tw, false, SudoNLP.Config.tcDictionaryRoot + "t2tw.txt"))
             {
                 throw new IllegalArgumentException("简体转台湾繁体词典加载失败");
             }

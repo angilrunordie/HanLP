@@ -8,10 +8,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import org.junit.Test;
-
-import com.sudonlp.HanLP;
 
 /**
  * @author gonggawang
@@ -29,8 +27,8 @@ public class TextRankSentenceTest
 	@Test
 	public void testExtractSummary()
 	{
-		List<String> oldSum = HanLP.extractSummary(str, 2);
-		List<String> newSum = HanLP.extractSummary(str, 2, separator);
+		List<String> oldSum = SudoNLP.extractSummary(str, 2);
+		List<String> newSum = SudoNLP.extractSummary(str, 2, separator);
 //		System.out.println("exctractSummay old:" + oldSum);
 //		System.out.println("exctractSummay new:" + newSum);
 		
@@ -43,8 +41,8 @@ public class TextRankSentenceTest
 	public void testGetSummary() 
 	{
 		
-		String oldSum = HanLP.getSummary(str, 100);
-		String newSum = HanLP.getSummary(str, 100, separator);
+		String oldSum = SudoNLP.getSummary(str, 100);
+		String newSum = SudoNLP.getSummary(str, 100, separator);
 		
 //		System.out.println("getSummay old:" + oldSum);
 //		System.out.println("getSummay new:" + newSum);

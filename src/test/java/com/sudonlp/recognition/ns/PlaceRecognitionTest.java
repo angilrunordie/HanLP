@@ -7,7 +7,7 @@ public class PlaceRecognitionTest extends TestCase
 {
     public void testSeg() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         DijkstraSegment segment = new DijkstraSegment();
         segment.enableJapaneseNameRecognize(false);
         segment.enableTranslatedNameRecognize(false);

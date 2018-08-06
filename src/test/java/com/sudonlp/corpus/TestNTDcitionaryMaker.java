@@ -21,7 +21,7 @@ public class TestNTDcitionaryMaker
                 ntDictionaryMaker.compute(document.getComplexSentenceList());
             }
         });
-        ntDictionaryMaker.saveTxtTo("D:\\JavaProjects\\HanLP\\data\\test\\organization\\nt");
+        ntDictionaryMaker.saveTxtTo("D:\\JavaProjects\\SudoNLP\\data\\test\\organization\\nt");
     }
 
 }

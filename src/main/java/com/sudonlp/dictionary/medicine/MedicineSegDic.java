@@ -1,18 +1,7 @@
 package com.sudonlp.dictionary.medicine;
 
-import com.sudonlp.HanLP;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.dictionary.CoreDictionary;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.TreeMap;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 本类用于存放：
@@ -25,9 +14,9 @@ public class MedicineSegDic {
     public static DoubleArrayTrie<CoreDictionary.Attribute> wordDic = new DoubleArrayTrie<CoreDictionary.Attribute>();
     public static DoubleArrayTrie<CoreDictionary.Attribute> wordCommonSubset = new DoubleArrayTrie<CoreDictionary.Attribute>();
     public static DoubleArrayTrie<CoreDictionary.Attribute> wordNotCommonSubset = new DoubleArrayTrie<CoreDictionary.Attribute>();
-    public final static String medicine_word_path = "C:/work/HanLp/HanLP/data/dictionary/medicine/medicineWordDictionary.txt";
-    public final static String medicine_word_common_subset_path = "C:/work/HanLp/HanLP/data/dictionary/medicine/medicine_common_subset.txt";
-    public final static String medicine_word_not_common_subset_path = "C:/work/HanLp/HanLP/data/dictionary/medicine/medicine_not_common_subset.txt";
+    public final static String medicine_word_path = "C:/work/HanLp/SudoNLP/data/dictionary/medicine/medicineWordDictionary.txt";
+    public final static String medicine_word_common_subset_path = "C:/work/HanLp/SudoNLP/data/dictionary/medicine/medicine_common_subset.txt";
+    public final static String medicine_word_not_common_subset_path = "C:/work/HanLp/SudoNLP/data/dictionary/medicine/medicine_not_common_subset.txt";
 
 //    private static boolean loadDic(String path, DoubleArrayTrie<CoreDictionary.Attribute> dic, String name) {
 //        logger.info("开始加载" + name + ":" + medicine_word_path);

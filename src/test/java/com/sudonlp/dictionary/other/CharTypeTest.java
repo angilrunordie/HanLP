@@ -1,8 +1,6 @@
 package com.sudonlp.dictionary.other;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.utility.TextUtility;
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.utility.TextUtility;
 import junit.framework.TestCase;
 
@@ -23,7 +21,7 @@ public class CharTypeTest extends TestCase
     {
 //        CharType.type[' '] = CharType.CT_OTHER;
         String text = "1 + 2 = 3; a+b= a + b";
-        assertEquals("[1/m,  /w, +/w,  /w, 2/m,  /w, =/w,  /w, 3/m, ;/w,  /w, a/nx, +/w, b/nx, =/w,  /w, a/nx,  /w, +/w,  /w, b/nx]", HanLP.segment(text).toString());
+        assertEquals("[1/m,  /w, +/w,  /w, 2/m,  /w, =/w,  /w, 3/m, ;/w,  /w, a/nx, +/w, b/nx, =/w,  /w, a/nx,  /w, +/w,  /w, b/nx]", SudoNLP.segment(text).toString());
     }
 
     public void testTab() throws Exception
@@ -32,6 +30,6 @@ public class CharTypeTest extends TestCase
         assertTrue(TextUtility.charType('\r') == CharType.CT_DELIMITER);
         assertTrue(TextUtility.charType('\0') == CharType.CT_DELIMITER);
 
-//        System.out.println(HanLP.segment("\t"));
+//        System.out.println(SudoNLP.segment("\t"));
     }
 }

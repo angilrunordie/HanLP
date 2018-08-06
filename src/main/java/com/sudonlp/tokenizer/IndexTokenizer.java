@@ -11,9 +11,8 @@
  */
 package com.sudonlp.tokenizer;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
-import com.sudonlp.seg.Dijkstra.DijkstraSegment;
 import com.sudonlp.seg.common.Term;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class IndexTokenizer
     /**
      * 预置分词器
      */
-    public static final Segment SEGMENT = HanLP.newSegment().enableIndexMode(true);
+    public static final Segment SEGMENT = SudoNLP.newSegment().enableIndexMode(true);
     public static List<Term> segment(String text)
     {
         return SEGMENT.seg(text);

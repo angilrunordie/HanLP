@@ -11,7 +11,7 @@
  */
 package com.sudonlp.seg.Dijkstra;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.recognition.nr.JapanesePersonRecognition;
 import com.sudonlp.recognition.nr.PersonRecognition;
 import com.sudonlp.recognition.nr.TranslatedPersonRecognition;
@@ -20,11 +20,6 @@ import com.sudonlp.recognition.nt.OrganizationRecognition;
 import com.sudonlp.seg.Dijkstra.Path.State;
 import com.sudonlp.seg.WordBasedSegment;
 import com.sudonlp.seg.common.*;
-import com.sudonlp.recognition.nr.JapanesePersonRecognition;
-import com.sudonlp.recognition.nr.PersonRecognition;
-import com.sudonlp.recognition.nr.TranslatedPersonRecognition;
-import com.sudonlp.recognition.ns.PlaceRecognition;
-import com.sudonlp.recognition.nt.OrganizationRecognition;
 
 import java.util.*;
 
@@ -43,7 +38,7 @@ public class DijkstraSegment extends WordBasedSegment
         generateWordNet(wordNetAll);
         ///////////////生成词图////////////////////
         Graph graph = generateBiGraph(wordNetAll);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.printf("粗分词图：%s\n", graph.printByTo());
         }
@@ -57,7 +52,7 @@ public class DijkstraSegment extends WordBasedSegment
             else combineByCustomDictionary(vertexList);
         }
 
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.println("粗分结果" + convert(vertexList, false));
         }
@@ -103,7 +98,7 @@ public class DijkstraSegment extends WordBasedSegment
             {
                 graph = generateBiGraph(wordNetOptimum);
                 vertexList = dijkstra(graph);
-                if (HanLP.Config.DEBUG)
+                if (SudoNLP.Config.DEBUG)
                 {
                     System.out.printf("细分词网：\n%s\n", wordNetOptimum);
                     System.out.printf("细分词图：%s\n", graph.printByTo());

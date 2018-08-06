@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.tokenizer.SpeedTokenizer;
 
 /**
@@ -23,7 +23,7 @@ public class DemoHighSpeedSegment
     public static void main(String[] args)
     {
         String text = "江西鄱阳湖干枯，中国最大淡水湖变成大草原";
-        HanLP.Config.ShowTermNature = false;
+        SudoNLP.Config.ShowTermNature = false;
         System.out.println(SpeedTokenizer.segment(text));
         long start = System.currentTimeMillis();
         int pressure = 1000000;

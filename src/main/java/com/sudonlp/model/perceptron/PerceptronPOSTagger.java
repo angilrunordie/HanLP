@@ -10,20 +10,13 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.perceptron.feature.FeatureMap;
 import com.sudonlp.model.perceptron.instance.Instance;
 import com.sudonlp.model.perceptron.instance.POSInstance;
 import com.sudonlp.model.perceptron.model.LinearModel;
 import com.sudonlp.model.perceptron.common.TaskType;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.tokenizer.lexical.POSTagger;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.perceptron.common.TaskType;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.Instance;
-import com.sudonlp.model.perceptron.instance.POSInstance;
-import com.sudonlp.model.perceptron.model.LinearModel;
 import com.sudonlp.tokenizer.lexical.POSTagger;
 
 import java.io.IOException;
@@ -56,7 +49,7 @@ public class PerceptronPOSTagger extends PerceptronTagger implements POSTagger
      */
     public PerceptronPOSTagger() throws IOException
     {
-        this(HanLP.Config.PerceptronPOSModelPath);
+        this(SudoNLP.Config.PerceptronPOSModelPath);
     }
 
     /**

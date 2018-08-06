@@ -1,10 +1,6 @@
 package com.sudonlp.seg.sodu;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.dictionary.CustomDictionary;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.recognition.medicine.*;
 import com.sudonlp.recognition.nr.JapanesePersonRecognition;
 import com.sudonlp.recognition.nr.PersonRecognition;
@@ -12,15 +8,6 @@ import com.sudonlp.recognition.nr.TranslatedPersonRecognition;
 import com.sudonlp.recognition.ns.PlaceRecognition;
 import com.sudonlp.recognition.nt.OrganizationRecognition;
 import com.sudonlp.seg.WordBasedSegment;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.seg.common.Vertex;
-import com.sudonlp.seg.common.WordNet;
-import com.sudonlp.recognition.medicine.*;
-import com.sudonlp.recognition.nr.JapanesePersonRecognition;
-import com.sudonlp.recognition.nr.PersonRecognition;
-import com.sudonlp.recognition.nr.TranslatedPersonRecognition;
-import com.sudonlp.recognition.ns.PlaceRecognition;
-import com.sudonlp.recognition.nt.OrganizationRecognition;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.seg.common.Vertex;
 import com.sudonlp.seg.common.WordNet;
@@ -38,7 +25,7 @@ public class SoduSegment extends WordBasedSegment {
         generateWordNet(wordNetAll); //  修改 ：这里调用本类的初始化函数，之生成最原始的网络////2018.8.1
         ///////////////生成词图////////////////////
 //        System.out.println("构图：" + (System.currentTimeMillis() - start));
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.printf("粗分词网：\n%s\n", wordNetAll);
         }
@@ -53,7 +40,7 @@ public class SoduSegment extends WordBasedSegment {
 //            else combineByCustomDictionary(vertexList);
 //        }
 
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.println("粗分结果" + convert(vertexList, false));
         }
@@ -125,7 +112,7 @@ public class SoduSegment extends WordBasedSegment {
                 wordNetOptimum.cleanVertexFrom();
 //                vertexList = viterbi(wordNetOptimum);
                 vertexList = viterbi_sodu(wordNetOptimum);
-                if (HanLP.Config.DEBUG)
+                if (SudoNLP.Config.DEBUG)
                 {
                     System.out.printf("细分词网：\n%s\n", wordNetOptimum);
                 }

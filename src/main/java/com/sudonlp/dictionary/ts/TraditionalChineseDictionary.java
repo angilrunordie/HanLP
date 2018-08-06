@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary.ts;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 
 import static com.sudonlp.utility.Predefine.logger;
@@ -30,12 +30,12 @@ public class TraditionalChineseDictionary extends BaseChineseDictionary
     static
     {
         long start = System.currentTimeMillis();
-        if (!load(HanLP.Config.tcDictionaryRoot + "t2s.txt", trie, false))
+        if (!load(SudoNLP.Config.tcDictionaryRoot + "t2s.txt", trie, false))
         {
-            throw new IllegalArgumentException("繁简词典" + HanLP.Config.tcDictionaryRoot + "t2s.txt" + "加载失败");
+            throw new IllegalArgumentException("繁简词典" + SudoNLP.Config.tcDictionaryRoot + "t2s.txt" + "加载失败");
         }
 
-        logger.info("繁简词典" + HanLP.Config.tcDictionaryRoot + "t2s.txt" + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
+        logger.info("繁简词典" + SudoNLP.Config.tcDictionaryRoot + "t2s.txt" + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
     }
 
     public static String convertToSimplifiedChinese(String traditionalChineseString)

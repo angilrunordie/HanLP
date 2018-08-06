@@ -19,6 +19,6 @@ public class TestNSDictionaryMaker {
                 nsDictionaryMaker.compute(document.getComplexSentenceList());
             }
         });
-        nsDictionaryMaker.saveTxtTo("D:\\JavaProjects\\HanLP\\data\\test\\place\\ns");
+        nsDictionaryMaker.saveTxtTo("D:\\JavaProjects\\SudoNLP\\data\\test\\place\\ns");
     }
 }

@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary.ns;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.corpus.dictionary.item.EnumItem;
 import com.sudonlp.corpus.tag.NS;
@@ -58,12 +58,12 @@ public class PlaceDictionary
     {
         long start = System.currentTimeMillis();
         dictionary = new NSDictionary();
-        if (dictionary.load(HanLP.Config.PlaceDictionaryPath))
-            logger.info(HanLP.Config.PlaceDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
+        if (dictionary.load(SudoNLP.Config.PlaceDictionaryPath))
+            logger.info(SudoNLP.Config.PlaceDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
         else
-            throw new IllegalArgumentException(HanLP.Config.PlaceDictionaryPath + "加载失败");
+            throw new IllegalArgumentException(SudoNLP.Config.PlaceDictionaryPath + "加载失败");
         transformMatrixDictionary = new TransformMatrixDictionary<NS>(NS.class);
-        transformMatrixDictionary.load(HanLP.Config.PlaceDictionaryTrPath);
+        transformMatrixDictionary.load(SudoNLP.Config.PlaceDictionaryTrPath);
         trie = new AhoCorasickDoubleArrayTrie<String>();
         TreeMap<String, String> patternMap = new TreeMap<String, String>();
         patternMap.put("CH", "CH");
@@ -106,7 +106,7 @@ public class PlaceDictionary
                 if (isBadCase(name)) return;
 
                 // 正式算它是一个名字
-                if (HanLP.Config.DEBUG)
+                if (SudoNLP.Config.DEBUG)
                 {
                     System.out.printf("识别出地名：%s %s\n", name, value);
                 }

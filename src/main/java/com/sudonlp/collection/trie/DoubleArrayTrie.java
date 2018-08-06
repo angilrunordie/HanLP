@@ -20,13 +20,12 @@ import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.corpus.io.ByteArrayStream;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.utility.ByteUtil;
-import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.*;
-import static com.sudonlp.HanLP.Config.IOAdapter;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * 双数组Trie树

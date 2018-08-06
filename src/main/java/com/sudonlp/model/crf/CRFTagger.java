@@ -10,14 +10,6 @@
  */
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.model.crf.crfpp.Encoder;
-import com.sudonlp.model.crf.crfpp.crf_learn;
-import com.sudonlp.model.perceptron.instance.InstanceHandler;
-import com.sudonlp.model.perceptron.utility.IOUtility;
-import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.model.crf.crfpp.Encoder;

@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.corpus.dictionary.StringDictionary;
 import com.sudonlp.seg.Other.CommonAhoCorasickDoubleArrayTrieSegment;
@@ -31,7 +31,7 @@ public class DemoPinyinToChinese
     public static void main(String[] args)
     {
         StringDictionary dictionary = new StringDictionary("=");
-        dictionary.load(HanLP.Config.PinyinDictionaryPath);
+        dictionary.load(SudoNLP.Config.PinyinDictionaryPath);
         TreeMap<String, Set<String>> map = new TreeMap<String, Set<String>>();
         for (Map.Entry<String, String> entry : dictionary.entrySet())
         {

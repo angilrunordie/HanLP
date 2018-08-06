@@ -51,7 +51,7 @@ public class LoadDicUtil {
 //    // 此部分代码用于测试 字典是否读取成功？
 //    public static void main(String [] args){
 //        DoubleArrayTrie<CoreDictionary.Attribute> trie = new DoubleArrayTrie<CoreDictionary.Attribute>();
-//        LoadDicUtil.loadDic("C:\\work\\HanLp\\HanLP\\data\\dictionary\\medicine\\drugNames.txt", trie, "药名");
+//        LoadDicUtil.loadDic("C:\\work\\HanLp\\SudoNLP\\data\\dictionary\\medicine\\drugNames.txt", trie, "药名");
 //        System.out.println(trie.get("新达罗颗粒剂").nature[0]);
 //    }
 }

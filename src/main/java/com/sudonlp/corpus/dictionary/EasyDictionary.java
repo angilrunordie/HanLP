@@ -14,15 +14,12 @@ package com.sudonlp.corpus.dictionary;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.dictionary.BaseSearcher;
 import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.dictionary.BaseSearcher;
 import com.sudonlp.utility.Predefine;
 
 import java.io.*;
 import java.util.*;
 
-import static com.sudonlp.HanLP.Config.IOAdapter;
-import static com.sudonlp.utility.Predefine.logger;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * 一个通用的、满足特定格式的双数组词典

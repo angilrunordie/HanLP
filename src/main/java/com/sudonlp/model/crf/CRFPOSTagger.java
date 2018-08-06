@@ -10,16 +10,7 @@
  */
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.corpus.document.sentence.word.Word;
-import com.sudonlp.model.crf.crfpp.Encoder;
-import com.sudonlp.model.crf.crfpp.FeatureIndex;
-import com.sudonlp.model.crf.crfpp.crf_learn;
-import com.sudonlp.model.perceptron.PerceptronPOSTagger;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.POSInstance;
-import com.sudonlp.tokenizer.lexical.POSTagger;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.corpus.document.sentence.word.Word;
 import com.sudonlp.model.crf.crfpp.Encoder;
@@ -46,7 +37,7 @@ public class CRFPOSTagger extends CRFTagger implements POSTagger
 
     public CRFPOSTagger() throws IOException
     {
-        this(HanLP.Config.CRFPOSModelPath);
+        this(SudoNLP.Config.CRFPOSModelPath);
     }
 
     public CRFPOSTagger(String modelPath) throws IOException

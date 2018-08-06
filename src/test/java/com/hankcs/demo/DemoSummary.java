@@ -11,8 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.summary.TextRankSentence;
+import com.sudonlp.SudoNLP;
 
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class DemoSummary
                 "根据刚刚完成了水资源管理制度的考核，有部分省接近了红线的指标，" +
                 "有部分省超过红线的指标。对一些超过红线的地方，陈明忠表示，对一些取用水项目进行区域的限批，" +
                 "严格地进行水资源论证和取水许可的批准。";
-        List<String> sentenceList = HanLP.extractSummary(document, 3);
+        List<String> sentenceList = SudoNLP.extractSummary(document, 3);
         System.out.println(sentenceList);
     }
 }

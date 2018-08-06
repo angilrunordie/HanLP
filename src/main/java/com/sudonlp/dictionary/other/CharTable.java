@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary.other;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.corpus.document.sentence.word.CompoundWord;
 import com.sudonlp.corpus.document.sentence.word.IWord;
@@ -19,7 +19,6 @@ import com.sudonlp.corpus.document.sentence.word.Word;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.utility.Predefine;
 
-import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import static com.sudonlp.utility.Predefine.logger;
 
@@ -37,7 +36,7 @@ public class CharTable
     static
     {
         long start = System.currentTimeMillis();
-        if (!load(HanLP.Config.CharTablePath))
+        if (!load(SudoNLP.Config.CharTablePath))
         {
             throw new IllegalArgumentException("字符正规化表加载失败");
         }

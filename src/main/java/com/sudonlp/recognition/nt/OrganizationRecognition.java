@@ -11,7 +11,7 @@
  */
 package com.sudonlp.recognition.nt;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.Viterbi;
 import com.sudonlp.corpus.dictionary.item.EnumItem;
 import com.sudonlp.corpus.tag.NT;
@@ -36,7 +36,7 @@ public class OrganizationRecognition
     public static boolean recognition(List<Vertex> pWordSegResult, WordNet wordNetOptimum, WordNet wordNetAll)
     {
         List<EnumItem<NT>> roleTagList = roleTag(pWordSegResult, wordNetAll);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();
@@ -51,7 +51,7 @@ public class OrganizationRecognition
             System.out.printf("机构名角色观察：%s\n", sbLog.toString());
         }
         List<NT> NTList = viterbiCompute(roleTagList);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();

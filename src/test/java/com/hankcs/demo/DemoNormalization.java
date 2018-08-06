@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.CustomDictionary;
 
 /**
@@ -24,12 +24,12 @@ public class DemoNormalization
 {
     public static void main(String[] args)
     {
-        HanLP.Config.Normalization = true;
+        SudoNLP.Config.Normalization = true;
         CustomDictionary.insert("爱听4G", "nz 1000");
-        System.out.println(HanLP.segment("爱听4g"));
-        System.out.println(HanLP.segment("爱听4G"));
-        System.out.println(HanLP.segment("爱听４G"));
-        System.out.println(HanLP.segment("爱听４Ｇ"));
-        System.out.println(HanLP.segment("愛聽４Ｇ"));
+        System.out.println(SudoNLP.segment("爱听4g"));
+        System.out.println(SudoNLP.segment("爱听4G"));
+        System.out.println(SudoNLP.segment("爱听４G"));
+        System.out.println(SudoNLP.segment("爱听４Ｇ"));
+        System.out.println(SudoNLP.segment("愛聽４Ｇ"));
     }
 }

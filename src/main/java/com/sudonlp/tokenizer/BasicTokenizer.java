@@ -10,7 +10,7 @@
  */
 package com.sudonlp.tokenizer;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 
@@ -25,7 +25,7 @@ public class BasicTokenizer
     /**
      * 预置分词器
      */
-    public static final Segment SEGMENT = HanLP.newSegment().enableAllNamedEntityRecognize(false).enableCustomDictionary(false);
+    public static final Segment SEGMENT = SudoNLP.newSegment().enableAllNamedEntityRecognize(false).enableCustomDictionary(false);
 
     /**
      * 分词

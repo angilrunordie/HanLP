@@ -11,13 +11,11 @@
  */
 package com.sudonlp.tokenizer;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * 标准分词器
@@ -28,7 +26,7 @@ public class StandardTokenizer
     /**
      * 预置分词器
      */
-    public static final Segment SEGMENT = HanLP.newSegment();
+    public static final Segment SEGMENT = SudoNLP.newSegment();
 
     /**
      * 分词

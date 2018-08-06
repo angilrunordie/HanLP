@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.EditDistance;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.dictionary.common.CommonSynonymDictionary;
@@ -19,9 +19,6 @@ import com.sudonlp.dictionary.common.CommonSynonymDictionaryEx;
 import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.TextUtility;
-import com.sudonlp.dictionary.common.CommonSynonymDictionary;
-import com.sudonlp.dictionary.common.CommonSynonymDictionaryEx;
-import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +36,7 @@ public class CoreSynonymDictionaryEx
     {
         try
         {
-            dictionary = CommonSynonymDictionaryEx.create(IOUtil.newInputStream(HanLP.Config.CoreSynonymDictionaryDictionaryPath));
+            dictionary = CommonSynonymDictionaryEx.create(IOUtil.newInputStream(SudoNLP.Config.CoreSynonymDictionaryDictionaryPath));
         }
         catch (Exception e)
         {

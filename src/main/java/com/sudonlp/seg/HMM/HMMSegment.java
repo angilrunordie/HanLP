@@ -10,23 +10,17 @@
  */
 package com.sudonlp.seg.HMM;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.model.trigram.CharacterBasedGenerativeModel;
 import com.sudonlp.seg.CharacterBasedSegment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.GlobalObjectPool;
 import com.sudonlp.utility.TextUtility;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.model.trigram.CharacterBasedGenerativeModel;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.utility.GlobalObjectPool;
 import com.sudonlp.utility.Predefine;
-import com.sudonlp.utility.TextUtility;
 
 import java.util.LinkedList;
 import java.util.List;
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 基于2阶HMM（A Second-Order Hidden Markov Model, TriGram3阶文法模型）+ BMES序列标注的分词器
@@ -39,7 +33,7 @@ public class HMMSegment extends CharacterBasedSegment
 
     public HMMSegment()
     {
-        this(HanLP.Config.HMMSegmentModelPath);
+        this(SudoNLP.Config.HMMSegmentModelPath);
     }
 
     public HMMSegment(String modelPath)

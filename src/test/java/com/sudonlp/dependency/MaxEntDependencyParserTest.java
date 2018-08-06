@@ -1,22 +1,12 @@
 package com.sudonlp.dependency;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dependency.CoNll.CoNLLLoader;
-import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
-import com.sudonlp.corpus.dependency.CoNll.CoNLLWord;
-import com.sudonlp.corpus.dependency.CoNll.Evaluator;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.seg.common.Term;
 import junit.framework.TestCase;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class MaxEntDependencyParserTest extends TestCase
 {
     public void testMaxEntParser() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        System.out.println(MaxEntDependencyParser.compute("我每天骑车上学"));
     }
 

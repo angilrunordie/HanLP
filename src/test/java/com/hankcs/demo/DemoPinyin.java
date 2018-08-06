@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.py.Pinyin;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class DemoPinyin
     public static void main(String[] args)
     {
         String text = "重载不是重任！";
-        List<Pinyin> pinyinList = HanLP.convertToPinyinList(text);
+        List<Pinyin> pinyinList = SudoNLP.convertToPinyinList(text);
         System.out.print("原文,");
         for (char c : text.toCharArray())
         {
@@ -83,7 +83,7 @@ public class DemoPinyin
         System.out.println();
 
         // 拼音转换可选保留无拼音的原字符
-        System.out.println(HanLP.convertToPinyinString("截至2012年，", " ", true));
-        System.out.println(HanLP.convertToPinyinString("截至2012年，", " ", false));
+        System.out.println(SudoNLP.convertToPinyinString("截至2012年，", " ", true));
+        System.out.println(SudoNLP.convertToPinyinString("截至2012年，", " ", false));
     }
 }

@@ -1,10 +1,9 @@
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.PKU;
 import com.sudonlp.model.perceptron.PerceptronSegmenter;
 import com.sudonlp.tokenizer.lexical.AbstractLexicalAnalyzer;
-import com.sudonlp.corpus.PKU;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
@@ -12,7 +11,7 @@ import java.util.Arrays;
 public class CRFPOSTaggerTest extends TestCase
 {
     public static final String CORPUS = "data/test/pku98/199801.txt";
-    public static String POS_MODEL_PATH = HanLP.Config.CRFPOSModelPath;
+    public static String POS_MODEL_PATH = SudoNLP.Config.CRFPOSModelPath;
 
     public void testTrain() throws Exception
     {

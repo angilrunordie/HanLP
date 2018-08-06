@@ -16,11 +16,7 @@ import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.dictionary.CoreDictionary;
 import com.sudonlp.utility.LexiconUtility;
 import com.sudonlp.utility.TextUtility;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.utility.LexiconUtility;
 import com.sudonlp.utility.Predefine;
-import com.sudonlp.utility.TextUtility;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -28,8 +24,7 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.util.*;
 
-import static com.sudonlp.utility.Predefine.logger;
-import static com.sudonlp.HanLP.Config.IOAdapter;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * 一些常用的IO操作

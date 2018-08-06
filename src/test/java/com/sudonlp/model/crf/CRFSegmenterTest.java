@@ -1,6 +1,6 @@
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.crf.crfpp.crf_learn;
 import junit.framework.TestCase;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public class CRFSegmenterTest extends TestCase
 {
 
-    public static final String CWS_MODEL_PATH = HanLP.Config.CRFCWSModelPath;
+    public static final String CWS_MODEL_PATH = SudoNLP.Config.CRFCWSModelPath;
 
     public void testTrain() throws Exception
     {

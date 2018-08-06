@@ -10,16 +10,7 @@
  */
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.corpus.document.sentence.word.Word;
-import com.sudonlp.dictionary.other.CharTable;
-import com.sudonlp.model.crf.crfpp.FeatureIndex;
-import com.sudonlp.model.crf.crfpp.TaggerImpl;
-import com.sudonlp.model.perceptron.PerceptronSegmenter;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.CWSInstance;
-import com.sudonlp.tokenizer.lexical.Segmenter;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.corpus.document.sentence.word.Word;
 import com.sudonlp.dictionary.other.CharTable;
@@ -31,7 +22,6 @@ import com.sudonlp.tokenizer.lexical.Segmenter;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +37,7 @@ public class CRFSegmenter extends CRFTagger implements Segmenter
 
     public CRFSegmenter() throws IOException
     {
-        this(HanLP.Config.CRFCWSModelPath);
+        this(SudoNLP.Config.CRFCWSModelPath);
     }
 
     public CRFSegmenter(String modelPath) throws IOException

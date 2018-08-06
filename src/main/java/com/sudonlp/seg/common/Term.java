@@ -11,9 +11,7 @@
  */
 package com.sudonlp.seg.common;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.utility.LexiconUtility;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.utility.LexiconUtility;
 
@@ -52,7 +50,7 @@ public class Term
     @Override
     public String toString()
     {
-        if (HanLP.Config.ShowTermNature)
+        if (SudoNLP.Config.ShowTermNature)
             return word + "/" + nature;
         return word;
     }

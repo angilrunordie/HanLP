@@ -1,9 +1,6 @@
 package com.sudonlp.corpus.io;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.model.maxent.MaxEntModel;
 import com.sudonlp.utility.ByteUtil;
-import com.sudonlp.utility.Predefine;
 import junit.framework.TestCase;
 
 import java.io.DataOutputStream;
@@ -119,7 +116,7 @@ public class ByteArrayTest extends TestCase
 //     */
 //    public void testLoadByteArray() throws Exception
 //    {
-//        ByteArray byteArray = ByteArray.createByteArray(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        ByteArray byteArray = ByteArray.createByteArray(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //    }
 //
@@ -129,7 +126,7 @@ public class ByteArrayTest extends TestCase
 //     */
 //    public void testLoadByteArrayStream() throws Exception
 //    {
-//        ByteArray byteArray = ByteArrayFileStream.createByteArrayFileStream(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        ByteArray byteArray = ByteArrayFileStream.createByteArrayFileStream(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //    }
 //
@@ -137,19 +134,19 @@ public class ByteArrayTest extends TestCase
 //    {
 //        long start;
 //
-//        ByteArray byteArray = ByteArray.createByteArray(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        ByteArray byteArray = ByteArray.createByteArray(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //
-//        byteArray = ByteArrayFileStream.createByteArrayFileStream(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        byteArray = ByteArrayFileStream.createByteArrayFileStream(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //
 //        start = System.currentTimeMillis();
-//        byteArray = ByteArray.createByteArray(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        byteArray = ByteArray.createByteArray(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //        System.out.printf("ByteArray: %d ms\n", (System.currentTimeMillis() - start));
 //
 //        start = System.currentTimeMillis();
-//        byteArray = ByteArrayFileStream.createByteArrayFileStream(HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
+//        byteArray = ByteArrayFileStream.createByteArrayFileStream(SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT);
 //        MaxEntModel.create(byteArray);
 //        System.out.printf("ByteArrayStream: %d ms\n", (System.currentTimeMillis() - start));
 //

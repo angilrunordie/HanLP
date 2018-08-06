@@ -19,7 +19,7 @@ public class DijkstraSegmentTest extends SegmentTestCase
 
     public void testIssue770() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         Segment segment = new DijkstraSegment();
         List<Term> termList = segment.seg("为什么我扔出的瓶子没有人回复？");
 //        System.out.println(termList);

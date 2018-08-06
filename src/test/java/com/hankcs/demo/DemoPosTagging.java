@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
 
 /**
@@ -23,7 +23,7 @@ public class DemoPosTagging
     public static void main(String[] args)
     {
         String text = "教授正在教授自然语言处理课程";
-        Segment segment = HanLP.newSegment();
+        Segment segment = SudoNLP.newSegment();
 
         System.out.println("未标注：" + segment.seg(text));
         segment.enablePartOfSpeechTagging(true);

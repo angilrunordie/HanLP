@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.HMM.HMMSegment;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
@@ -29,7 +29,7 @@ public class DemoHMMSegment extends TestUtility
 {
     public static void main(String[] args)
     {
-        HanLP.Config.ShowTermNature = false;    // 关闭词性显示
+        SudoNLP.Config.ShowTermNature = false;    // 关闭词性显示
         Segment segment = new HMMSegment();
         String[] sentenceArray = new String[]
                 {

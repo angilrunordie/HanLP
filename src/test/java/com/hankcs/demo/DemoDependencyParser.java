@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
 import com.sudonlp.corpus.dependency.CoNll.CoNLLWord;
 import com.sudonlp.utility.TestUtility;
@@ -24,7 +24,7 @@ public class DemoDependencyParser extends TestUtility
 {
     public static void main(String[] args)
     {
-        CoNLLSentence sentence = HanLP.parseDependency("徐先生还具体帮助他确定了把画雄鹰、松鼠和麻雀作为主攻目标。");
+        CoNLLSentence sentence = SudoNLP.parseDependency("徐先生还具体帮助他确定了把画雄鹰、松鼠和麻雀作为主攻目标。");
         System.out.println(sentence);
         // 可以方便地遍历它
         for (CoNLLWord word : sentence)

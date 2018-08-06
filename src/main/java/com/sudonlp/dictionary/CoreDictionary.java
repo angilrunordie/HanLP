@@ -11,12 +11,11 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.utility.LexiconUtility;
 import com.sudonlp.utility.Predefine;
 import com.sudonlp.utility.TextUtility;
 
@@ -32,7 +31,7 @@ import static com.sudonlp.utility.Predefine.logger;
 public class CoreDictionary
 {
     public static DoubleArrayTrie<Attribute> trie = new DoubleArrayTrie<Attribute>();
-    public final static String path = HanLP.Config.CoreDictionaryPath;
+    public final static String path = SudoNLP.Config.CoreDictionaryPath;
     public static final int totalFrequency = 221894;
 
     // 自动加载词典

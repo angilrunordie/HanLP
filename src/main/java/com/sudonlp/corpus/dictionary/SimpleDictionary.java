@@ -12,7 +12,6 @@
 package com.sudonlp.corpus.dictionary;
 
 import com.sudonlp.collection.trie.bintrie.BinTrie;
-import com.sudonlp.collection.trie.bintrie.BinTrie;
 import com.sudonlp.utility.Predefine;
 
 import java.io.BufferedReader;
@@ -22,8 +21,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static com.sudonlp.HanLP.Config.IOAdapter;
-import static com.sudonlp.utility.Predefine.logger;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * 可以调整大小的词典

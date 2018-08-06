@@ -11,14 +11,12 @@
  */
 package com.sudonlp.tokenizer;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.other.CharTable;
 import com.sudonlp.dictionary.ts.SimplifiedChineseDictionary;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.SentencesUtil;
-import com.sudonlp.dictionary.other.CharTable;
-import com.sudonlp.dictionary.ts.SimplifiedChineseDictionary;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -33,7 +31,7 @@ public class TraditionalChineseTokenizer
     /**
      * 预置分词器
      */
-    public static Segment SEGMENT = HanLP.newSegment();
+    public static Segment SEGMENT = SudoNLP.newSegment();
 
     private static List<Term> segSentence(String text)
     {

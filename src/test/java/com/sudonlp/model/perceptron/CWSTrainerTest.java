@@ -1,6 +1,6 @@
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.corpus.document.sentence.word.CompoundWord;
 import com.sudonlp.corpus.document.sentence.word.IWord;
@@ -15,7 +15,7 @@ public class CWSTrainerTest extends TestCase
 
     public void testTrain() throws Exception
     {
-        HanLP.Config.enableDebug();
+        SudoNLP.Config.enableDebug();
         PerceptronTrainer trainer = new CWSTrainer();
         PerceptronTrainer.Result result = trainer.train(
                 "data/test/pku98/199801.txt",

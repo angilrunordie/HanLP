@@ -11,14 +11,7 @@
  */
 package com.sudonlp.model.bigram;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.corpus.dependency.model.WordNatureWeightModelMaker;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.dependency.common.Edge;
-import com.sudonlp.dependency.common.Node;
-import com.sudonlp.utility.Predefine;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.dependency.model.WordNatureWeightModelMaker;
 import com.sudonlp.corpus.io.ByteArray;
@@ -28,12 +21,9 @@ import com.sudonlp.dependency.common.Node;
 import com.sudonlp.utility.Predefine;
 
 import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 词、词性相互构成依存关系的统计句法分析模型
@@ -186,7 +176,7 @@ public class WordNatureDependencyModel
         {
             attribute = Attribute.NULL;
         }
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.println(from + " 到 " + to + " : " + attribute);
         }

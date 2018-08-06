@@ -11,22 +11,7 @@
  */
 package com.sudonlp.seg;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.collection.trie.bintrie.BaseNode;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.dictionary.CustomDictionary;
-import com.sudonlp.dictionary.other.CharTable;
-import com.sudonlp.dictionary.other.CharType;
-import com.sudonlp.seg.NShort.Path.AtomNode;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.seg.common.Vertex;
-import com.sudonlp.seg.common.WordNet;
-import com.sudonlp.utility.Predefine;
-import com.sudonlp.utility.SentencesUtil;
-import com.sudonlp.utility.TextUtility;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.collection.trie.bintrie.BaseNode;
@@ -44,8 +29,6 @@ import com.sudonlp.utility.SentencesUtil;
 import com.sudonlp.utility.TextUtility;
 
 import java.util.*;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 分词器（分词服务）<br>
@@ -485,7 +468,7 @@ public abstract class Segment
     public List<Term> seg(String text)
     {
         char[] charArray = text.toCharArray();
-        if (HanLP.Config.Normalization)
+        if (SudoNLP.Config.Normalization)
         {
             CharTable.normalization(charArray);
         }
@@ -581,7 +564,7 @@ public abstract class Segment
     public List<Term> seg(char[] text)
     {
         assert text != null;
-        if (HanLP.Config.Normalization)
+        if (SudoNLP.Config.Normalization)
         {
             CharTable.normalization(text);
         }

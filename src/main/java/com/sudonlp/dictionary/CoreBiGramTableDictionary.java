@@ -11,9 +11,8 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.seg.common.Vertex;
 import com.sudonlp.utility.Predefine;
 
 import java.io.*;
@@ -42,7 +41,7 @@ public class CoreBiGramTableDictionary
 
     static
     {
-        String path = HanLP.Config.BiGramDictionaryPath;
+        String path = SudoNLP.Config.BiGramDictionaryPath;
         logger.info("开始加载二元词典" + path + ".table");
         long start = System.currentTimeMillis();
         if (!load(path))
@@ -57,7 +56,7 @@ public class CoreBiGramTableDictionary
 
     static boolean load(String path)
     {
-        String datPath = HanLP.Config.BiGramDictionaryPath + ".table" + Predefine.BIN_EXT;
+        String datPath = SudoNLP.Config.BiGramDictionaryPath + ".table" + Predefine.BIN_EXT;
         if (loadDat(datPath)) return true;
         BufferedReader br;
         TreeMap<Integer, TreeMap<Integer, Integer>> map = new TreeMap<Integer, TreeMap<Integer, Integer>>();
@@ -75,7 +74,7 @@ public class CoreBiGramTableDictionary
                 int idA = CoreDictionary.trie.exactMatchSearch(a);
                 if (idA == -1)
                 {
-//                    if (HanLP.Config.DEBUG)
+//                    if (SudoNLP.Config.DEBUG)
 //                        logger.warning(line + " 中的 " + a + "不存在于核心词典，将会忽略这一行");
                     continue;
                 }
@@ -83,7 +82,7 @@ public class CoreBiGramTableDictionary
                 int idB = CoreDictionary.trie.exactMatchSearch(b);
                 if (idB == -1)
                 {
-//                    if (HanLP.Config.DEBUG)
+//                    if (SudoNLP.Config.DEBUG)
 //                        logger.warning(line + " 中的 " + b + "不存在于核心词典，将会忽略这一行");
                     continue;
                 }
@@ -301,7 +300,7 @@ public class CoreBiGramTableDictionary
      */
     public static boolean reload()
     {
-        String biGramDictionaryPath = HanLP.Config.BiGramDictionaryPath;
+        String biGramDictionaryPath = SudoNLP.Config.BiGramDictionaryPath;
         IOUtil.deleteFile(biGramDictionaryPath + ".table" + Predefine.BIN_EXT);
 
         return load(biGramDictionaryPath);

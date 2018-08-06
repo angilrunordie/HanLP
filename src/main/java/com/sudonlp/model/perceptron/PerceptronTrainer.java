@@ -10,7 +10,7 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.perceptron.common.FrequencyMap;
 import com.sudonlp.model.perceptron.feature.ImmutableFeatureMap;
 import com.sudonlp.model.perceptron.feature.MutableFeatureMap;
@@ -25,20 +25,6 @@ import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.classification.utilities.io.ConsoleLogger;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.classification.utilities.io.ConsoleLogger;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.perceptron.common.FrequencyMap;
-import com.sudonlp.model.perceptron.feature.ImmutableFeatureMap;
-import com.sudonlp.model.perceptron.feature.MutableFeatureMap;
-import com.sudonlp.model.perceptron.instance.Instance;
-import com.sudonlp.model.perceptron.instance.InstanceHandler;
-import com.sudonlp.model.perceptron.model.AveragedPerceptron;
-import com.sudonlp.model.perceptron.model.LinearModel;
-import com.sudonlp.model.perceptron.model.StructuredPerceptron;
-import com.sudonlp.model.perceptron.tagset.TagSet;
-import com.sudonlp.model.perceptron.utility.IOUtility;
-import com.sudonlp.model.perceptron.utility.Utility;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -235,7 +221,7 @@ public abstract class PerceptronTrainer extends InstanceConsumer
                 }
             }
             logger.start("以压缩比 %.2f 保存模型到 %s ... ", compressRatio, modelFile);
-            models[0].save(modelFile, immutableFeatureMap.featureIdMap.entrySet(), compressRatio, HanLP.Config.DEBUG);
+            models[0].save(modelFile, immutableFeatureMap.featureIdMap.entrySet(), compressRatio, SudoNLP.Config.DEBUG);
             logger.finish(" 保存完毕\n");
             if (compressRatio == 0) return new Result(models[0], accuracy);
         }

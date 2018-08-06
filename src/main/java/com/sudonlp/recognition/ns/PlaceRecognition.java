@@ -11,7 +11,7 @@
  */
 package com.sudonlp.recognition.ns;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.Viterbi;
 import com.sudonlp.corpus.dictionary.item.EnumItem;
 import com.sudonlp.corpus.tag.NS;
@@ -34,7 +34,7 @@ public class PlaceRecognition
     public static boolean recognition(List<Vertex> pWordSegResult, WordNet wordNetOptimum, WordNet wordNetAll)
     {
         List<EnumItem<NS>> roleTagList = roleTag(pWordSegResult, wordNetAll);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();
@@ -49,7 +49,7 @@ public class PlaceRecognition
             System.out.printf("地名角色观察：%s\n", sbLog.toString());
         }
         List<NS> NSList = viterbiCompute(roleTagList);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();

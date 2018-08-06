@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary.nr;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.corpus.dictionary.item.EnumItem;
 import com.sudonlp.corpus.tag.NR;
@@ -26,7 +26,6 @@ import java.util.*;
 
 import static com.sudonlp.corpus.tag.NR.*;
 import static com.sudonlp.utility.Predefine.logger;
-import static com.sudonlp.dictionary.nr.NRConstant.*;
 
 /**
  * 人名识别用的词典，实际上是对两个词典的包装
@@ -54,12 +53,12 @@ public class PersonDictionary
     {
         long start = System.currentTimeMillis();
         dictionary = new NRDictionary();
-        if (!dictionary.load(HanLP.Config.PersonDictionaryPath))
+        if (!dictionary.load(SudoNLP.Config.PersonDictionaryPath))
         {
-            throw new IllegalArgumentException("人名词典加载失败：" + HanLP.Config.PersonDictionaryPath);
+            throw new IllegalArgumentException("人名词典加载失败：" + SudoNLP.Config.PersonDictionaryPath);
         }
         transformMatrixDictionary = new TransformMatrixDictionary<NR>(NR.class);
-        transformMatrixDictionary.load(HanLP.Config.PersonDictionaryTrPath);
+        transformMatrixDictionary.load(SudoNLP.Config.PersonDictionaryTrPath);
         trie = new AhoCorasickDoubleArrayTrie<NRPattern>();
         TreeMap<String, NRPattern> map = new TreeMap<String, NRPattern>();
         for (NRPattern pattern : NRPattern.values())
@@ -67,7 +66,7 @@ public class PersonDictionary
             map.put(pattern.toString(), pattern);
         }
         trie.build(map);
-        logger.info(HanLP.Config.PersonDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
+        logger.info(SudoNLP.Config.PersonDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
     }
 
     /**
@@ -184,7 +183,7 @@ public class PersonDictionary
                 if (isBadCase(name)) return;
 
                 // 正式算它是一个名字
-                if (HanLP.Config.DEBUG)
+                if (SudoNLP.Config.DEBUG)
                 {
                     System.out.printf("识别出人名：%s %s\n", name, value);
                 }

@@ -1,6 +1,5 @@
 package com.sudonlp.seg.NShort;
 
-import com.sudonlp.HanLP;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.tokenizer.StandardTokenizer;
@@ -32,7 +31,7 @@ public class NShortSegmentTest extends TestCase
 
     public void testIssue691() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         StandardTokenizer.SEGMENT.enableCustomDictionary(false);
         Segment nShortSegment = new NShortSegment().enableCustomDictionary(false).enablePlaceRecognize(true).enableOrganizationRecognize(true);
 //        System.out.println(nShortSegment.seg("今天，刘志军案的关键人物,山西女商人丁书苗在市二中院出庭受审。"));

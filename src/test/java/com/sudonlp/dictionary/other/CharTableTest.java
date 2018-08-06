@@ -1,12 +1,6 @@
 package com.sudonlp.dictionary.other;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.io.IOUtil;
 import junit.framework.TestCase;
-
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 
 public class CharTableTest extends TestCase
 {
@@ -106,7 +100,7 @@ public class CharTableTest extends TestCase
 //                else CONVERT[i] = ' ';
 //            }
 //        }
-//        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(HanLP.Config.CharTablePath));
+//        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(SudoNLP.Config.CharTablePath));
 //        out.writeObject(CONVERT);
 //        out.close();
 //    }
@@ -115,7 +109,7 @@ public class CharTableTest extends TestCase
 //    {
 ////        char[] CONVERT = CharTable.CONVERT;
 ////        StringDictionary dictionary = new StringDictionary("=");
-////        dictionary.load(HanLP.Config.t2sDictionaryPath);
+////        dictionary.load(SudoNLP.Config.t2sDictionaryPath);
 ////        for (Map.Entry<String, String> entry : dictionary.entrySet())
 ////        {
 ////            String key = entry.getKey();
@@ -130,14 +124,14 @@ public class CharTableTest extends TestCase
 ////            CONVERT[t] = s;
 ////        }
 ////
-////        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(HanLP.Config.CharTablePath));
+////        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(SudoNLP.Config.CharTablePath));
 ////        out.writeObject(CONVERT);
 ////        out.close();
 //    }
 //
 //    public void testDumpCharTable() throws Exception
 //    {
-//        BufferedWriter bw = IOUtil.newBufferedWriter(HanLP.Config.CharTablePath.replace(".bin.yes", ".txt"));
+//        BufferedWriter bw = IOUtil.newBufferedWriter(SudoNLP.Config.CharTablePath.replace(".bin.yes", ".txt"));
 //        char[] CONVERT = CharTable.CONVERT;
 //        for (int i = 0; i < CONVERT.length; i++)
 //        {
@@ -151,6 +145,6 @@ public class CharTableTest extends TestCase
 //
 //    public void testLoadCharTableFromTxt() throws Exception
 //    {
-////        CharTable.load(HanLP.Config.CharTablePath.replace(".bin.yes", ".txt"));
+////        CharTable.load(SudoNLP.Config.CharTablePath.replace(".bin.yes", ".txt"));
 //    }
 }

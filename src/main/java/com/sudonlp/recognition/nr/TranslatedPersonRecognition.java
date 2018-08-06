@@ -11,7 +11,7 @@
  */
 package com.sudonlp.recognition.nr;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.dictionary.CoreDictionary;
 import com.sudonlp.dictionary.nr.TranslatedPersonDictionary;
@@ -59,7 +59,7 @@ public class TranslatedPersonRecognition
                     // 识别结束
                     if (appendTimes > 1)
                     {
-                        if (HanLP.Config.DEBUG)
+                        if (SudoNLP.Config.DEBUG)
                         {
                             System.out.println("音译人名识别出：" + sbName.toString());
                         }

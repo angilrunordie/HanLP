@@ -27,8 +27,8 @@ public class DemoURLRecognition
     public static void main(String[] args)
     {
         String text =
-                "HanLP的项目地址是https://github.com/hankcs/HanLP，" +
-                        "发布地址是https://github.com/hankcs/HanLP/releases，" +
+                "HanLP的项目地址是https://github.com/hankcs/SudoNLP，" +
+                        "发布地址是https://github.com/hankcs/SudoNLP/releases，" +
                         "我有时候会在www.hankcs.com上面发布一些消息，" +
                         "我的微博是http://weibo.com/hankcs/，会同步推送hankcs.com的新闻。" +
                         "听说.中国域名开放申请了,但我并没有申请hankcs.中国,因为穷……";

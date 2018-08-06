@@ -11,16 +11,7 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.SimpleDictionary;
-import com.sudonlp.corpus.dictionary.StringDictionary;
-import com.sudonlp.corpus.dictionary.StringDictionaryMaker;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.dictionary.py.*;
-import com.sudonlp.utility.TextUtility;
 import junit.framework.TestCase;
-
-import java.util.*;
 
 /**
  * @author hankcs
@@ -29,7 +20,7 @@ public class TestMakePinYinDictionary extends TestCase
 {
 //    public void testCombine() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        StringDictionary dictionaryPY = new StringDictionary();
 //        dictionaryPY.load("D:\\JavaProjects\\jpinyin\\data\\pinyinTable.standard.txt");
 //
@@ -56,7 +47,7 @@ public class TestMakePinYinDictionary extends TestCase
 //
 //    public void testCombineSingle() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        StringDictionary main = StringDictionaryMaker.combine("data/dictionary/pinyin/pinyin.txt", "data/dictionary/pinyin/single.txt");
 //        main.save("data/dictionary/pinyin/pinyin.txt");
 //    }
@@ -111,7 +102,7 @@ public class TestMakePinYinDictionary extends TestCase
 //
 //    public void testConvert() throws Exception
 //    {
-//        String text = "重载不是重担，" + HanLP.convertToTraditionalChinese("以后爱皇后");
+//        String text = "重载不是重担，" + SudoNLP.convertToTraditionalChinese("以后爱皇后");
 //        List<Pinyin> pinyinList = PinyinDictionary.convertToPinyin(text);
 //        System.out.print("原文,");
 //        for (char c : text.toCharArray())
@@ -251,13 +242,13 @@ public class TestMakePinYinDictionary extends TestCase
 //
 //    public void testDumpSMT() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        SYTDictionary.dumpEnum("data/dictionary/pinyin/");
 //    }
 //
 //    public void testPinyinDictionary() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        Pinyin[] pinyins = PinyinDictionary.get("中");
 //        System.out.println(Arrays.toString(pinyins));
 //    }

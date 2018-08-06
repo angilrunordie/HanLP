@@ -11,13 +11,12 @@
  */
 package com.sudonlp.dictionary.nr;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.utility.Predefine;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.TreeMap;
@@ -30,7 +29,7 @@ import static com.sudonlp.utility.Predefine.logger;
  */
 public class TranslatedPersonDictionary
 {
-    static String path = HanLP.Config.TranslatedPersonDictionaryPath;
+    static String path = SudoNLP.Config.TranslatedPersonDictionaryPath;
     static DoubleArrayTrie<Boolean> trie;
 
     static

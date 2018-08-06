@@ -4,37 +4,13 @@
  * <email>hankcs.cn@gmail.com</email>
  * <create-date>2014/10/17 19:02</create-date>
  *
- * <copyright file="HanLP.java" company="上海林原信息科技有限公司">
+ * <copyright file="SudoNLP.java" company="上海林原信息科技有限公司">
  * Copyright (c) 2003-2014, 上海林原信息科技有限公司. All Right Reserved, http://www.linrunsoft.com/
  * This source is subject to the LinrunSpace License. Please contact 上海林原信息科技有限公司 to get more information.
  * </copyright>
  */
 package com.sudonlp;
 
-import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
-import com.sudonlp.corpus.io.IIOAdapter;
-import com.sudonlp.dependency.nnparser.NeuralNetworkDependencyParser;
-import com.sudonlp.dictionary.py.Pinyin;
-import com.sudonlp.dictionary.py.PinyinDictionary;
-import com.sudonlp.dictionary.ts.*;
-import com.sudonlp.mining.phrase.IPhraseExtractor;
-import com.sudonlp.mining.phrase.MutualInformationEntropyPhraseExtractor;
-import com.sudonlp.mining.word.NewWordDiscover;
-import com.sudonlp.mining.word.WordInfo;
-import com.sudonlp.model.crf.CRFLexicalAnalyzer;
-import com.sudonlp.model.perceptron.PerceptronLexicalAnalyzer;
-import com.sudonlp.seg.CRF.CRFSegment;
-import com.sudonlp.seg.HMM.HMMSegment;
-import com.sudonlp.seg.NShort.NShortSegment;
-import com.sudonlp.seg.Other.DoubleArrayTrieSegment;
-import com.sudonlp.seg.Segment;
-import com.sudonlp.seg.Viterbi.ViterbiSegment;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.summary.TextRankKeyword;
-import com.sudonlp.summary.TextRankSentence;
-import com.sudonlp.tokenizer.StandardTokenizer;
-import com.sudonlp.utility.Predefine;
-import com.sudonlp.utility.TextUtility;
 import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
 import com.sudonlp.corpus.io.IIOAdapter;
 import com.sudonlp.dependency.nnparser.NeuralNetworkDependencyParser;
@@ -65,16 +41,14 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 
-import static com.sudonlp.utility.Predefine.logger;
-
 /**
- * HanLP: Han Language Processing <br>
+ * SudoNLP: Han Language Processing <br>
  * 汉语言处理包 <br>
  * 常用接口工具类
  *
  * @author hankcs
  */
-public class HanLP
+public class SudoNLP
 {
     /**
      * 库的全局配置，既可以用代码修改，也可以通过hanlp.properties配置（按照 变量名=值 的形式）
@@ -245,7 +219,7 @@ public class HanLP
                 ClassLoader loader = Thread.currentThread().getContextClassLoader();
                 if (loader == null)
                 {  // IKVM (v.0.44.0.5) doesn't set context classloader
-                    loader = HanLP.Config.class.getClassLoader();
+                    loader = SudoNLP.Config.class.getClassLoader();
                 }
                 try
                 {
@@ -416,7 +390,7 @@ public class HanLP
     /**
      * 工具类，不需要生成实例
      */
-    private HanLP()
+    private SudoNLP()
     {
     }
 
@@ -450,18 +424,18 @@ public class HanLP
      */
     public static String s2t(String s)
     {
-        return HanLP.convertToTraditionalChinese(s);
+        return SudoNLP.convertToTraditionalChinese(s);
     }
 
     /**
-     * 繁转简,是{@link HanLP#convertToSimplifiedChinese(String)}的简称
+     * 繁转简,是{@link SudoNLP#convertToSimplifiedChinese(String)}的简称
      *
      * @param t 繁体中文(大陆标准)
      * @return 简体中文
      */
     public static String t2s(String t)
     {
-        return HanLP.convertToSimplifiedChinese(t);
+        return SudoNLP.convertToSimplifiedChinese(t);
     }
 
     /**

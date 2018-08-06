@@ -1,9 +1,5 @@
 package com.sudonlp.collection.trie.bintrie;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.sudonlp.corpus.util.DictionaryUtil;
-import com.sudonlp.dictionary.CustomDictionary;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import junit.framework.TestCase;
 
@@ -83,12 +79,12 @@ public class BinTrieTest extends TestCase
 
 //    public void testCustomDictionary() throws Exception
 //    {
-//        HanLP.Config.enableDebug(true);
+//        SudoNLP.Config.enableDebug(true);
 //        System.out.println(CustomDictionary.get("龟兔赛跑"));
 //    }
 //
 //    public void testSortCustomDictionary() throws Exception
 //    {
-//        DictionaryUtil.sortDictionary(HanLP.Config.CustomDictionaryPath[0]);
+//        DictionaryUtil.sortDictionary(SudoNLP.Config.CustomDictionaryPath[0]);
 //    }
 }

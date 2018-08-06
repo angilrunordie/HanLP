@@ -16,15 +16,12 @@ import com.sudonlp.corpus.dictionary.item.Item;
 import com.sudonlp.corpus.document.sentence.word.IWord;
 import com.sudonlp.corpus.document.sentence.word.Word;
 import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.collection.trie.bintrie.BinTrie;
-import com.sudonlp.corpus.dictionary.item.Item;
 import com.sudonlp.utility.Predefine;
 
 import java.io.*;
 import java.util.*;
 
-import static com.sudonlp.HanLP.Config.IOAdapter;
-import static com.sudonlp.utility.Predefine.logger;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * 一个通用的词典制作工具，词条格式：词 标签 频次

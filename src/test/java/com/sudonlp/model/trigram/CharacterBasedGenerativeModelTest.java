@@ -1,24 +1,13 @@
 package com.sudonlp.model.trigram;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.CorpusLoader;
-import com.sudonlp.corpus.document.Document;
-import com.sudonlp.corpus.document.sentence.word.Word;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.seg.HMM.HMMSegment;
-import com.sudonlp.seg.Segment;
-import com.sudonlp.seg.common.Term;
 import junit.framework.TestCase;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class CharacterBasedGenerativeModelTest extends TestCase
 {
 //    public void testTrainAndSegment() throws Exception
 //    {
 //        final CharacterBasedGenerativeModel model = new CharacterBasedGenerativeModel();
-//        CorpusLoader.walk("D:\\JavaProjects\\HanLP\\data\\test\\cbgm", new CorpusLoader.Handler()
+//        CorpusLoader.walk("D:\\JavaProjects\\SudoNLP\\data\\test\\cbgm", new CorpusLoader.Handler()
 //        {
 //            @Override
 //            public void handle(Document document)
@@ -30,10 +19,10 @@ public class CharacterBasedGenerativeModelTest extends TestCase
 //            }
 //        });
 //        model.train();
-////        DataOutputStream out = new DataOutputStream(new FileOutputStream(HanLP.Config.HMMSegmentModelPath));
+////        DataOutputStream out = new DataOutputStream(new FileOutputStream(SudoNLP.Config.HMMSegmentModelPath));
 ////        model.save(out);
 ////        out.close();
-////        model.load(ByteArray.createByteArray(HanLP.Config.HMMSegmentModelPath));
+////        model.load(ByteArray.createByteArray(SudoNLP.Config.HMMSegmentModelPath));
 //        String text = "中国领土";
 //        char[] charArray = text.toCharArray();
 //        char[] tag = model.tag(charArray);
@@ -43,7 +32,7 @@ public class CharacterBasedGenerativeModelTest extends TestCase
 //    public void testLoad() throws Exception
 //    {
 //        CharacterBasedGenerativeModel model = new CharacterBasedGenerativeModel();
-//        model.load(ByteArray.createByteArray(HanLP.Config.HMMSegmentModelPath));
+//        model.load(ByteArray.createByteArray(SudoNLP.Config.HMMSegmentModelPath));
 //        String text = "我实现了一个基于Character Based TriGram的分词器";
 //        char[] sentence = text.toCharArray();
 //        char[] tag = model.tag(sentence);
@@ -87,7 +76,7 @@ public class CharacterBasedGenerativeModelTest extends TestCase
 //
 //    public void testSegment() throws Exception
 //    {
-//        HanLP.Config.ShowTermNature = false;
+//        SudoNLP.Config.ShowTermNature = false;
 //        String text = "我实现了一个基于Character Based TriGram的分词器";
 //        Segment segment = new HMMSegment();
 //        List<Term> termList = segment.seg(text);

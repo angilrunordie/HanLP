@@ -11,7 +11,7 @@
  */
 package com.sudonlp.recognition.nr;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.Viterbi;
 import com.sudonlp.corpus.dictionary.item.EnumItem;
 import com.sudonlp.corpus.tag.NR;
@@ -36,7 +36,7 @@ public class PersonRecognition
     public static boolean recognition(List<Vertex> pWordSegResult, WordNet wordNetOptimum, WordNet wordNetAll)
     {
         List<EnumItem<NR>> roleTagList = roleObserve(pWordSegResult);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();
@@ -51,7 +51,7 @@ public class PersonRecognition
             System.out.printf("人名角色观察：%s\n", sbLog.toString());
         }
         List<NR> nrList = viterbiComputeSimply(roleTagList);
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             StringBuilder sbLog = new StringBuilder();
             Iterator<Vertex> iterator = pWordSegResult.iterator();

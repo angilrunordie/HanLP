@@ -10,17 +10,7 @@
  */
 package com.sudonlp.model.perceptron.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.CorpusLoader;
-import com.sudonlp.corpus.document.Document;
-import com.sudonlp.corpus.document.sentence.word.IWord;
-import com.sudonlp.corpus.io.IOUtil;
 import junit.framework.TestCase;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 
 /**
  * @author hankcs

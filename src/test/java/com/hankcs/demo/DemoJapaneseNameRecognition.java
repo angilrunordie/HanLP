@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 
@@ -30,7 +30,7 @@ public class DemoJapaneseNameRecognition
                 "林志玲亮相网友:确定不是波多野结衣？",
                 "龟山千广和近藤公园在龟山公园里喝酒赏花",
         };
-        Segment segment = HanLP.newSegment().enableJapaneseNameRecognize(true);
+        Segment segment = SudoNLP.newSegment().enableJapaneseNameRecognize(true);
         for (String sentence : testCase)
         {
             List<Term> termList = segment.seg(sentence);

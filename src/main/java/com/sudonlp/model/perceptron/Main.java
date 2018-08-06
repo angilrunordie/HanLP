@@ -10,15 +10,11 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.perceptron.cli.Args;
 import com.sudonlp.model.perceptron.cli.Argument;
 import com.sudonlp.model.perceptron.common.TaskType;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.perceptron.cli.Args;
-import com.sudonlp.model.perceptron.cli.Argument;
-import com.sudonlp.model.perceptron.common.TaskType;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,7 +44,7 @@ public class Main
         boolean evaluate;
 
         @Argument(description = "模型文件路径")
-        String[] model = new String[]{HanLP.Config.PerceptronCWSModelPath, HanLP.Config.PerceptronPOSModelPath, HanLP.Config.PerceptronNERModelPath};
+        String[] model = new String[]{SudoNLP.Config.PerceptronCWSModelPath, SudoNLP.Config.PerceptronPOSModelPath, SudoNLP.Config.PerceptronNERModelPath};
 
         @Argument(description = "输入文本路径")
         String input;

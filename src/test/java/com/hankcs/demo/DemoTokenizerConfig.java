@@ -11,7 +11,6 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
 import com.sudonlp.tokenizer.StandardTokenizer;
 
 /**

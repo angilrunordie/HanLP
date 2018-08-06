@@ -11,7 +11,7 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.perceptron.feature.FeatureMap;
 import com.sudonlp.model.perceptron.instance.CWSInstance;
 import com.sudonlp.model.perceptron.model.LinearModel;
@@ -20,15 +20,6 @@ import com.sudonlp.model.perceptron.instance.Instance;
 import com.sudonlp.model.perceptron.tagset.CWSTagSet;
 import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.tokenizer.lexical.Segmenter;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.perceptron.common.TaskType;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.CWSInstance;
-import com.sudonlp.model.perceptron.instance.Instance;
-import com.sudonlp.model.perceptron.model.LinearModel;
-import com.sudonlp.model.perceptron.tagset.CWSTagSet;
-import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.tokenizer.lexical.Segmenter;
 
 import java.io.IOException;
@@ -65,7 +56,7 @@ public class PerceptronSegmenter extends PerceptronTagger implements Segmenter
      */
     public PerceptronSegmenter() throws IOException
     {
-        this(HanLP.Config.PerceptronCWSModelPath);
+        this(SudoNLP.Config.PerceptronCWSModelPath);
     }
 
     public void segment(String text, List<String> output)

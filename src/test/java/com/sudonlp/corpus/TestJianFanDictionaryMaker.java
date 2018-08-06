@@ -11,14 +11,7 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.StringDictionary;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.dictionary.other.CharTable;
 import junit.framework.TestCase;
-
-import java.io.*;
-import java.util.*;
 
 /**
  * @author hankcs
@@ -32,7 +25,7 @@ public class TestJianFanDictionaryMaker extends TestCase
     public void testCombine() throws Exception
     {
 //        StringDictionary dictionaryHanLP = new StringDictionary("=");
-//        dictionaryHanLP.load(HanLP.Config.t2sDictionaryPath);
+//        dictionaryHanLP.load(SudoNLP.Config.t2sDictionaryPath);
 //
 //        StringDictionary dictionaryOuter = new StringDictionary("=");
 //        dictionaryOuter.load("D:\\Doc\\语料库\\简繁分歧词表.txt");
@@ -42,21 +35,21 @@ public class TestJianFanDictionaryMaker extends TestCase
 //            String t = entry.getKey();
 //            String s = entry.getValue();
 //            if (t.length() == 1) continue;
-//            if (HanLP.convertToTraditionalChinese(s).equals(t)) continue;
+//            if (SudoNLP.convertToTraditionalChinese(s).equals(t)) continue;
 //            dictionaryHanLP.add(t, s);
 //        }
 //
-//        dictionaryHanLP.save(HanLP.Config.t2sDictionaryPath);
+//        dictionaryHanLP.save(SudoNLP.Config.t2sDictionaryPath);
     }
 
 //    public void testConvertSingle() throws Exception
 //    {
-//        System.out.println(HanLP.convertToTraditionalChinese("一个劲"));
+//        System.out.println(SudoNLP.convertToTraditionalChinese("一个劲"));
 //    }
 //
 //    public void testIssue() throws Exception
 //    {
-//        System.out.println(HanLP.convertToSimplifiedChinese("缐"));
+//        System.out.println(SudoNLP.convertToSimplifiedChinese("缐"));
 //        System.out.println(CharTable.convert("缐"));
 //    }
 //

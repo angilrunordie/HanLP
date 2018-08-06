@@ -11,21 +11,7 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.DictionaryMaker;
-import com.sudonlp.corpus.dictionary.EasyDictionary;
-import com.sudonlp.corpus.dictionary.TFDictionary;
-import com.sudonlp.corpus.dictionary.item.Item;
-import com.sudonlp.corpus.document.CorpusLoader;
-import com.sudonlp.corpus.document.Document;
-import com.sudonlp.corpus.document.sentence.word.CompoundWord;
-import com.sudonlp.corpus.document.sentence.word.IWord;
-import com.sudonlp.corpus.occurrence.TermFrequency;
-import com.sudonlp.corpus.util.CorpusUtil;
 import junit.framework.TestCase;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 往核心词典里补充等效词串
@@ -34,7 +20,7 @@ import java.util.Map;
 public class TestAdjustCoreDictionary extends TestCase
 {
 
-//    public static final String DATA_DICTIONARY_CORE_NATURE_DICTIONARY_TXT = HanLP.Config.CoreDictionaryPath;
+//    public static final String DATA_DICTIONARY_CORE_NATURE_DICTIONARY_TXT = SudoNLP.Config.CoreDictionaryPath;
 //
 //    public void testGetCompiledWordFromDictionary() throws Exception
 //    {

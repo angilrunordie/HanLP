@@ -10,9 +10,8 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.model.crf.CRFLexicalAnalyzer;
-import com.sudonlp.seg.CRF.CRFSegment;
 import com.sudonlp.seg.Segment;
 
 import java.io.IOException;
@@ -27,12 +26,12 @@ public class DemoMultithreadingSegment
 {
     public static void main(String[] args) throws IOException
     {
-        Segment segment = new CRFLexicalAnalyzer(HanLP.Config.CRFCWSModelPath).enableCustomDictionary(false); // CRF分词器效果好，速度慢，并行化之后可以提高一些速度
+        Segment segment = new CRFLexicalAnalyzer(SudoNLP.Config.CRFCWSModelPath).enableCustomDictionary(false); // CRF分词器效果好，速度慢，并行化之后可以提高一些速度
 
         String text = "举办纪念活动铭记二战历史，不忘战争带给人类的深重灾难，是为了防止悲剧重演，确保和平永驻；" +
                 "铭记二战历史，更是为了提醒国际社会，需要共同捍卫二战胜利成果和国际公平正义，" +
                 "必须警惕和抵制在历史认知和维护战后国际秩序问题上的倒行逆施。";
-        HanLP.Config.ShowTermNature = false;
+        SudoNLP.Config.ShowTermNature = false;
         System.out.println(segment.seg(text));
         int pressure = 10000;
         StringBuilder sbBigText = new StringBuilder(text.length() * pressure);

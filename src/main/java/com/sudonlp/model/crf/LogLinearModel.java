@@ -10,18 +10,7 @@
  */
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.corpus.io.FileIOAdapter;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.model.perceptron.common.TaskType;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.feature.MutableFeatureMap;
-import com.sudonlp.model.perceptron.model.LinearModel;
-import com.sudonlp.model.perceptron.tagset.CWSTagSet;
-import com.sudonlp.model.perceptron.tagset.NERTagSet;
-import com.sudonlp.model.perceptron.tagset.TagSet;
-import com.sudonlp.utility.Predefine;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.corpus.io.FileIOAdapter;
 import com.sudonlp.corpus.io.IOUtil;
@@ -37,9 +26,6 @@ import com.sudonlp.utility.Predefine;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.*;
-
-import static com.sudonlp.utility.Predefine.BIN_EXT;
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 对数线性模型形式的CRF模型
@@ -96,7 +82,7 @@ public class LogLinearModel extends LinearModel
         }
         String binPath = modelFile + Predefine.BIN_EXT;
 
-        if (!((HanLP.Config.IOAdapter == null || HanLP.Config.IOAdapter instanceof FileIOAdapter) && !IOUtil.isFileExisted(binPath)))
+        if (!((SudoNLP.Config.IOAdapter == null || SudoNLP.Config.IOAdapter instanceof FileIOAdapter) && !IOUtil.isFileExisted(binPath)))
         {
             try
             {

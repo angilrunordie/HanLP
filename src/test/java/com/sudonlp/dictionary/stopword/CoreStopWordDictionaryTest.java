@@ -1,12 +1,8 @@
 package com.sudonlp.dictionary.stopword;
 
-import com.sudonlp.HanLP;
 import com.sudonlp.collection.MDAG.MDAGSet;
-import com.sudonlp.corpus.io.IOUtil;
 import junit.framework.TestCase;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,8 +33,8 @@ public class CoreStopWordDictionaryTest extends TestCase
 
 //    public void testRemoveDuplicateEntries() throws Exception
 //    {
-//        StopWordDictionary dictionary = new StopWordDictionary(new File(HanLP.Config.CoreStopWordDictionaryPath));
-//        BufferedWriter bw = IOUtil.newBufferedWriter(HanLP.Config.CoreStopWordDictionaryPath);
+//        StopWordDictionary dictionary = new StopWordDictionary(new File(SudoNLP.Config.CoreStopWordDictionaryPath));
+//        BufferedWriter bw = IOUtil.newBufferedWriter(SudoNLP.Config.CoreStopWordDictionaryPath);
 //        for (String word : dictionary)
 //        {
 //            bw.write(word);

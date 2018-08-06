@@ -10,7 +10,7 @@
  */
 package com.sudonlp.dictionary.other;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.IOUtil;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ public class PartOfSpeechTagDictionary
 
     static
     {
-        load(HanLP.Config.PartOfSpeechTagDictionary);
+        load(SudoNLP.Config.PartOfSpeechTagDictionary);
     }
 
     public static void load(String path)

@@ -10,17 +10,7 @@
  */
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.model.crf.crfpp.FeatureIndex;
-import com.sudonlp.model.crf.crfpp.TaggerImpl;
-import com.sudonlp.model.perceptron.PerceptronNERecognizer;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.instance.NERInstance;
-import com.sudonlp.model.perceptron.instance.POSInstance;
-import com.sudonlp.model.perceptron.tagset.NERTagSet;
-import com.sudonlp.model.perceptron.utility.Utility;
-import com.sudonlp.tokenizer.lexical.NERecognizer;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.document.sentence.Sentence;
 import com.sudonlp.model.crf.crfpp.FeatureIndex;
 import com.sudonlp.model.perceptron.PerceptronNERecognizer;
@@ -49,7 +39,7 @@ public class CRFNERecognizer extends CRFTagger implements NERecognizer
 
     public CRFNERecognizer() throws IOException
     {
-        this(HanLP.Config.CRFNERModelPath);
+        this(SudoNLP.Config.CRFNERModelPath);
     }
 
     public CRFNERecognizer(String modelPath) throws IOException

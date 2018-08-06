@@ -11,7 +11,7 @@
  */
 package com.sudonlp.seg.CRF;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.bintrie.BinTrie;
 import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.dictionary.other.CharTable;
@@ -24,21 +24,10 @@ import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.CharacterHelper;
 import com.sudonlp.utility.GlobalObjectPool;
-import com.sudonlp.collection.trie.bintrie.BinTrie;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.dictionary.other.CharTable;
-import com.sudonlp.model.CRFSegmentModel;
 import com.sudonlp.model.crf.CRFLexicalAnalyzer;
-import com.sudonlp.model.crf.CRFModel;
-import com.sudonlp.model.crf.Table;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.utility.CharacterHelper;
-import com.sudonlp.utility.GlobalObjectPool;
 import com.sudonlp.utility.Predefine;
 
 import java.util.*;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 
 /**
@@ -81,7 +70,7 @@ public class CRFSegment extends CharacterBasedSegment
     // 已废弃，请使用功能更丰富、设计更优雅的{@link com.hankcs.hanlp.model.crf.CRFLexicalAnalyzer}。
     public CRFSegment()
     {
-        this(HanLP.Config.CRFSegmentModelPath);
+        this(SudoNLP.Config.CRFSegmentModelPath);
     }
 
     @Override
@@ -93,7 +82,7 @@ public class CRFSegment extends CharacterBasedSegment
         table.v = atomSegmentToTable(sentenceConverted);
         crfModel.tag(table);
         List<Term> termList = new LinkedList<Term>();
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.println("CRF标注结果");
             System.out.println(table);

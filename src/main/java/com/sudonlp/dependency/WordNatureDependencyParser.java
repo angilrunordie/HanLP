@@ -11,16 +11,13 @@
  */
 package com.sudonlp.dependency;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
 import com.sudonlp.dependency.common.Edge;
 import com.sudonlp.dependency.common.Node;
 import com.sudonlp.model.bigram.WordNatureDependencyModel;
 import com.sudonlp.seg.common.Term;
-import com.sudonlp.tokenizer.NLPTokenizer;
 import com.sudonlp.utility.GlobalObjectPool;
-import com.sudonlp.dependency.common.Edge;
-import com.sudonlp.dependency.common.Node;
 
 import java.util.List;
 
@@ -48,7 +45,7 @@ public class WordNatureDependencyParser extends MinimumSpanningTreeParser
 
     public WordNatureDependencyParser()
     {
-        this(HanLP.Config.WordNatureModelPath);
+        this(SudoNLP.Config.WordNatureModelPath);
     }
 
     /**

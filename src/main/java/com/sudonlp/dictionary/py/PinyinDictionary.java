@@ -11,19 +11,16 @@
  */
 package com.sudonlp.dictionary.py;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.dictionary.StringDictionary;
 import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.corpus.tag.Nature;
 import com.sudonlp.dictionary.BaseSearcher;
-import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.Predefine;
 
 import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.util.*;
 
 import static com.sudonlp.utility.Predefine.logger;
@@ -39,12 +36,12 @@ public class PinyinDictionary
     static
     {
         long start = System.currentTimeMillis();
-        if (!load(HanLP.Config.PinyinDictionaryPath))
+        if (!load(SudoNLP.Config.PinyinDictionaryPath))
         {
-            throw new IllegalArgumentException("拼音词典" + HanLP.Config.PinyinDictionaryPath + "加载失败");
+            throw new IllegalArgumentException("拼音词典" + SudoNLP.Config.PinyinDictionaryPath + "加载失败");
         }
 
-        logger.info("拼音词典" + HanLP.Config.PinyinDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
+        logger.info("拼音词典" + SudoNLP.Config.PinyinDictionaryPath + "加载成功，耗时" + (System.currentTimeMillis() - start) + "ms");
     }
 
     /**

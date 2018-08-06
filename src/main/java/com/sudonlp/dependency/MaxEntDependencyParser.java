@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dependency;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.dartsclone.Pair;
 import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
 import com.sudonlp.corpus.io.ByteArray;
@@ -22,8 +22,6 @@ import com.sudonlp.model.maxent.MaxEntModel;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.GlobalObjectPool;
 import com.sudonlp.utility.Predefine;
-import com.sudonlp.dependency.common.Edge;
-import com.sudonlp.dependency.common.Node;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -45,7 +43,7 @@ public class MaxEntDependencyParser extends MinimumSpanningTreeParser
 
     public MaxEntDependencyParser()
     {
-        String path = HanLP.Config.MaxEntModelPath + Predefine.BIN_EXT;
+        String path = SudoNLP.Config.MaxEntModelPath + Predefine.BIN_EXT;
         model = GlobalObjectPool.get(path);
         if (model != null) return;
         long start = System.currentTimeMillis();
@@ -56,7 +54,7 @@ public class MaxEntDependencyParser extends MinimumSpanningTreeParser
         }
         else
         {
-            model = MaxEntModel.create(HanLP.Config.MaxEntModelPath);
+            model = MaxEntModel.create(SudoNLP.Config.MaxEntModelPath);
         }
         if (model != null)
         {

@@ -11,8 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.summary.TextRankKeyword;
+import com.sudonlp.SudoNLP;
 
 import java.util.List;
 
@@ -29,7 +28,7 @@ public class DemoKeyword
                 "但两者的界限并不非常清楚，特别是在中国。" +
                 "软件从业人员分为初级程序员、高级程序员、系统" +
                 "分析员和项目经理四大类。";
-        List<String> keywordList = HanLP.extractKeyword(content, 5);
+        List<String> keywordList = SudoNLP.extractKeyword(content, 5);
         System.out.println(keywordList);
     }
 }

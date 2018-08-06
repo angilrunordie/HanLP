@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 
@@ -40,7 +40,7 @@ public class DemoChineseNameRecognition
                 "这里有关天培的有关事迹",
                 "龚学平等领导说,邓颖超生前杜绝超生",
         };
-        Segment segment = HanLP.newSegment().enableNameRecognize(true);
+        Segment segment = SudoNLP.newSegment().enableNameRecognize(true);
         for (String sentence : testCase)
         {
             List<Term> termList = segment.seg(sentence);

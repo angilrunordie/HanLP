@@ -11,17 +11,14 @@
  */
 package com.sudonlp.seg;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.sudonlp.dictionary.CoreBiGramTableDictionary;
 import com.sudonlp.dictionary.CoreDictionary;
 import com.sudonlp.dictionary.CustomDictionary;
 import com.sudonlp.dictionary.other.CharTable;
 import com.sudonlp.dictionary.other.CharType;
-import com.sudonlp.seg.CRF.CRFSegment;
 import com.sudonlp.seg.Other.CommonAhoCorasickSegmentUtil;
 import com.sudonlp.seg.Other.DoubleArrayTrieSegment;
-import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.Dijkstra.DijkstraSegment;
 import com.sudonlp.seg.Viterbi.ViterbiSegment;
 import com.sudonlp.seg.common.ResultTerm;
@@ -32,7 +29,6 @@ import junit.framework.TestCase;
 
 import java.io.BufferedReader;
 import java.io.StringReader;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeMap;
@@ -44,7 +40,7 @@ public class SegmentTest extends TestCase
 {
     public void testSeg() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         Segment segment = new DijkstraSegment();
 //        System.out.println(segment.seg(
 //                "我遗忘我的密码了"
@@ -53,7 +49,7 @@ public class SegmentTest extends TestCase
 
     public void testIssue880() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         Segment segment = new DijkstraSegment();
         System.out.println(segment.seg("龚学平等表示会保证金云鹏的安全"));
         System.out.println(segment.seg("王中军代表蓝队发言"));
@@ -61,7 +57,7 @@ public class SegmentTest extends TestCase
 
     public void testViterbi() throws Exception
     {
-//        HanLP.Config.enableDebug(true);
+//        SudoNLP.Config.enableDebug(true);
         CustomDictionary.add("网剧");
         Segment seg = new DijkstraSegment();
         List<Term> termList = seg.seg("优酷总裁魏明介绍了优酷2015年的内容战略，表示要以“大电影、大网剧、大综艺”为关键词");
@@ -80,7 +76,7 @@ public class SegmentTest extends TestCase
 
     public void testShortest() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        Segment segment = new ViterbiSegment().enableAllNamedEntityRecognize(true);
 //        System.out.println(segment.seg("把市场经济奉行的等价交换原则引入党的生活和国家机关政务活动中"));
     }
@@ -117,7 +113,7 @@ public class SegmentTest extends TestCase
 
     public void testSpeechTagging() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         String text = "教授正在教授自然语言处理课程";
         DijkstraSegment segment = new DijkstraSegment();
 
@@ -128,7 +124,7 @@ public class SegmentTest extends TestCase
 
     public void testFactory() throws Exception
     {
-        Segment segment = HanLP.newSegment();
+        Segment segment = SudoNLP.newSegment();
     }
 
     public void testCustomDictionary() throws Exception
@@ -140,7 +136,7 @@ public class SegmentTest extends TestCase
 
     public void testNT() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         Segment segment = new DijkstraSegment().enableOrganizationRecognize(true);
 //        System.out.println(segment.seg("张克智与潍坊地铁建设工程公司"));
     }
@@ -154,24 +150,24 @@ public class SegmentTest extends TestCase
 
     public void testIssue2() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         String text = "BENQphone";
-//        System.out.println(HanLP.segment(text));
+//        System.out.println(SudoNLP.segment(text));
         CustomDictionary.insert("BENQ");
-//        System.out.println(HanLP.segment(text));
+//        System.out.println(SudoNLP.segment(text));
     }
 
     public void testIssue3() throws Exception
     {
         assertEquals(CharType.CT_DELIMITER, CharType.get('*'));
-//        System.out.println(HanLP.segment("300g*2"));
-//        System.out.println(HanLP.segment("３００ｇ＊２"));
-//        System.out.println(HanLP.segment("鱼300克*2/组"));
+//        System.out.println(SudoNLP.segment("300g*2"));
+//        System.out.println(SudoNLP.segment("３００ｇ＊２"));
+//        System.out.println(SudoNLP.segment("鱼300克*2/组"));
     }
 
     public void testIssue313() throws Exception
     {
-//        System.out.println(HanLP.segment("hello\n" + "world"));
+//        System.out.println(SudoNLP.segment("hello\n" + "world"));
     }
 
     public void testQuickAtomSegment() throws Exception
@@ -296,8 +292,8 @@ public class SegmentTest extends TestCase
 
 //    public void testCRFSegment() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
-////        HanLP.Config.ShowTermNature = false;
+//        SudoNLP.Config.enableDebug();
+////        SudoNLP.Config.ShowTermNature = false;
 //        Segment segment = new CRFSegment();
 //        System.out.println(segment.seg("有句谚语叫做一个萝卜一个坑儿"));
 //    }
@@ -319,7 +315,7 @@ public class SegmentTest extends TestCase
 //        System.out.println(CharType.get(' '));
         assertEquals(CharTable.convert(' '), ' ');
 //        System.out.println(CharTable.convert('﹗'));
-        HanLP.Config.Normalization = true;
+        SudoNLP.Config.Normalization = true;
 //        System.out.println(StandardTokenizer.segment("号 "));
     }
 
@@ -338,7 +334,7 @@ public class SegmentTest extends TestCase
 
     public void testIssue71() throws Exception
     {
-        Segment segment = HanLP.newSegment();
+        Segment segment = SudoNLP.newSegment();
         segment = segment.enableAllNamedEntityRecognize(true);
         segment = segment.enableNumberQuantifierRecognize(true);
 //        System.out.println(segment.seg("曾幻想过，若干年后的我就是这个样子的吗"));
@@ -358,7 +354,7 @@ public class SegmentTest extends TestCase
             "华夏基金与嘉实基金两家京系基金公司",
             "则应从排名第八的投标人开始依次递补三名投标人"
         };
-        Segment segment = HanLP.newSegment().enableOrganizationRecognize(true).enableNumberQuantifierRecognize(true);
+        Segment segment = SudoNLP.newSegment().enableOrganizationRecognize(true).enableNumberQuantifierRecognize(true);
         for (String sentence : testCase)
         {
             List<Term> termList = segment.seg(sentence);
@@ -374,7 +370,7 @@ public class SegmentTest extends TestCase
     public void testBuildASimpleSegment() throws Exception
     {
         TreeMap<String, String> dictionary = new TreeMap<String, String>();
-        dictionary.put("HanLP", "名词");
+        dictionary.put("SudoNLP", "名词");
         dictionary.put("特别", "副词");
         dictionary.put("方便", "形容词");
         AhoCorasickDoubleArrayTrie<String> acdat = new AhoCorasickDoubleArrayTrie<String>();
@@ -398,7 +394,7 @@ public class SegmentTest extends TestCase
 
     public void testIssue290() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         String txt = "而其他肢解出去的七个贝尔公司如西南贝尔、太平洋贝尔、大西洋贝尔。";
         Segment seg_viterbi = new ViterbiSegment().enablePartOfSpeechTagging(true).enableOffset(true).enableNameRecognize(true).enablePlaceRecognize(true).enableOrganizationRecognize(true).enableNumberQuantifierRecognize(true);
 //        System.out.println(seg_viterbi.seg(txt));
@@ -408,13 +404,13 @@ public class SegmentTest extends TestCase
     {
         CustomDictionary.insert("酷我");
         CustomDictionary.insert("酷我音乐");
-        Segment segment = HanLP.newSegment().enableIndexMode(true);
+        Segment segment = SudoNLP.newSegment().enableIndexMode(true);
 //        System.out.println(segment.seg("1酷我音乐2酷我音乐3酷我4酷我音乐6酷7酷我音乐"));
     }
 
     public void testIssue358() throws Exception
     {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
         String text = "受约束，需要遵守心理学会所定的道德原则，所需要时须说明该实验与所能得到的知识的关系";
 
         Segment segment = StandardTokenizer.SEGMENT.enableAllNamedEntityRecognize(false).enableCustomDictionary(false)
@@ -425,7 +421,7 @@ public class SegmentTest extends TestCase
 
     public void testIssue496() throws Exception
     {
-        Segment segment = HanLP.newSegment().enableIndexMode(true);
+        Segment segment = SudoNLP.newSegment().enableIndexMode(true);
 //        System.out.println(segment.seg("中医药"));
 //        System.out.println(segment.seg("中医药大学"));
     }
@@ -461,7 +457,7 @@ public class SegmentTest extends TestCase
 
     public void testIssue542() throws Exception
     {
-        Segment seg = HanLP.newSegment();
+        Segment seg = SudoNLP.newSegment();
         seg.enableAllNamedEntityRecognize(true);
         seg.enableNumberQuantifierRecognize(true);
 //        System.out.println(seg.seg("一分钟就累了"));
@@ -470,15 +466,15 @@ public class SegmentTest extends TestCase
     public void testIssue623() throws Exception
     {
         StandardTokenizer.SEGMENT.enableCustomDictionary(false);
-//        System.out.println(HanLP.segment("赵四158开头的号码"));
-//        System.out.println(HanLP.segment("上周四18:00召开股东大会"));
+//        System.out.println(SudoNLP.segment("赵四158开头的号码"));
+//        System.out.println(SudoNLP.segment("上周四18:00召开股东大会"));
     }
 
     public void testIssue633() throws Exception
     {
         CustomDictionary.add("钱管家");
         StandardTokenizer.SEGMENT.enableCustomDictionaryForcing(true);
-//        System.out.println(HanLP.segment("钱管家中怎么绑定网银"));
+//        System.out.println(SudoNLP.segment("钱管家中怎么绑定网银"));
     }
 
     public void testIssue784() throws Exception
@@ -486,12 +482,12 @@ public class SegmentTest extends TestCase
         String s = "苏苏中级会计什么时候更新";
         CustomDictionary.add("苏苏");
         StandardTokenizer.SEGMENT.enableCustomDictionaryForcing(true);
-        assertEquals("[苏苏/nz, 中级会计/nz, 什么/ry, 时候/n, 更新/v]", HanLP.segment(s).toString());
+        assertEquals("[苏苏/nz, 中级会计/nz, 什么/ry, 时候/n, 更新/v]", SudoNLP.segment(s).toString());
     }
 
     public void testIssue790() throws Exception
     {
-        Segment seg = HanLP.newSegment();
+        Segment seg = SudoNLP.newSegment();
         seg.enableOrganizationRecognize(true);
         seg.enableNumberQuantifierRecognize(true);
 
@@ -502,6 +498,6 @@ public class SegmentTest extends TestCase
 
     public void testTimeIssue() throws Exception
     {
-        assertTrue(HanLP.segment("1月中旬应该会发生什么").toString().contains("1月"));
+        assertTrue(SudoNLP.segment("1月中旬应该会发生什么").toString().contains("1月"));
     }
 }

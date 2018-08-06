@@ -1,9 +1,8 @@
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.PKU;
 import com.sudonlp.tokenizer.lexical.AbstractLexicalAnalyzer;
-import com.sudonlp.corpus.PKU;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
@@ -26,6 +25,6 @@ public class PerceptronPOSTaggerTest extends TestCase
         tagger.getModel().compress(0.01);
         double[] scores = tagger.evaluate("data/test/pku98/199801.txt");
         System.out.println(scores[0]);
-        tagger.getModel().save(HanLP.Config.PerceptronPOSModelPath + ".small");
+        tagger.getModel().save(SudoNLP.Config.PerceptronPOSModelPath + ".small");
     }
 }

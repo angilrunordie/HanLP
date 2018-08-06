@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.mining.word.WordInfo;
 
@@ -27,7 +27,7 @@ public class DemoNewWordDiscover
     public static void main(String[] args) throws IOException
     {
         // 文本长度越大越好，试试红楼梦？
-        List<WordInfo> wordInfoList = HanLP.extractWords(IOUtil.newBufferedReader("data/test/红楼梦.txt"), 100);
+        List<WordInfo> wordInfoList = SudoNLP.extractWords(IOUtil.newBufferedReader("data/test/红楼梦.txt"), 100);
         System.out.println(wordInfoList);
     }
 }

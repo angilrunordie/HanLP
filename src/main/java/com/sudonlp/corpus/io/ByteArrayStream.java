@@ -16,8 +16,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static com.sudonlp.HanLP.Config.IOAdapter;
-import static com.sudonlp.utility.Predefine.logger;
+import static com.sudonlp.SudoNLP.Config.IOAdapter;
 
 /**
  * @author hankcs

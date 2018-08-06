@@ -11,13 +11,13 @@
  */
 package com.sudonlp.dependency.nnparser.option;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 
 /**
  * @author hankcs
  */
 public class ConfigOption
 {
-    public static String PATH = HanLP.Config.NNParserModelPath;
+    public static String PATH = SudoNLP.Config.NNParserModelPath;
     public static String DEPRL_DESCRIPTION_PATH = PATH + ".description.txt";
 }

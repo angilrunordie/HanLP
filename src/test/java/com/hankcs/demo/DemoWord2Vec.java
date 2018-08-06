@@ -89,7 +89,7 @@ public class DemoWord2Vec
         {
             if (!IOUtil.isFileExisted(TRAIN_FILE_NAME))
             {
-                System.err.println("语料不存在，请阅读文档了解语料获取与格式：https://github.com/hankcs/HanLP/wiki/word2vec");
+                System.err.println("语料不存在，请阅读文档了解语料获取与格式：https://github.com/hankcs/SudoNLP/wiki/word2vec");
                 System.exit(1);
             }
             Word2VecTrainer trainerBuilder = new Word2VecTrainer();

@@ -10,14 +10,14 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 
 /**
  * @author hankcs
  */
 public class Config
 {
-    public static final String CWS_MODEL_FILE = HanLP.Config.PerceptronCWSModelPath;
-    public static final String POS_MODEL_FILE = HanLP.Config.PerceptronPOSModelPath;
-    public static final String NER_MODEL_FILE = HanLP.Config.PerceptronNERModelPath;
+    public static final String CWS_MODEL_FILE = SudoNLP.Config.PerceptronCWSModelPath;
+    public static final String POS_MODEL_FILE = SudoNLP.Config.PerceptronPOSModelPath;
+    public static final String NER_MODEL_FILE = SudoNLP.Config.PerceptronNERModelPath;
 }

@@ -31,7 +31,7 @@ public class TestNRDcitionaryMaker
                 nrDictionaryMaker.compute(compatibleList);
             }
         });
-        nrDictionaryMaker.saveTxtTo("D:\\JavaProjects\\HanLP\\data\\test\\person\\nr1");
+        nrDictionaryMaker.saveTxtTo("D:\\JavaProjects\\SudoNLP\\data\\test\\person\\nr1");
     }
 
 }

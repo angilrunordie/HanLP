@@ -11,12 +11,11 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.EditDistance;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.dictionary.common.CommonSynonymDictionary;
 import com.sudonlp.seg.common.Term;
-import com.sudonlp.dictionary.common.CommonSynonymDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ public class CoreSynonymDictionary
         try
         {
             long start = System.currentTimeMillis();
-            dictionary = CommonSynonymDictionary.create(IOUtil.newInputStream(HanLP.Config.CoreSynonymDictionaryDictionaryPath));
+            dictionary = CommonSynonymDictionary.create(IOUtil.newInputStream(SudoNLP.Config.CoreSynonymDictionaryDictionaryPath));
             logger.info("载入核心同义词词典成功，耗时 " + (System.currentTimeMillis() - start) + " ms");
         }
         catch (Exception e)

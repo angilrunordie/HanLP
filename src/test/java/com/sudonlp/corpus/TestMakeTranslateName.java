@@ -11,23 +11,8 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.dictionary.CustomDictionary;
 import com.sudonlp.dictionary.nr.TranslatedPersonDictionary;
-import com.sudonlp.seg.Dijkstra.DijkstraSegment;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.tokenizer.StandardTokenizer;
 import junit.framework.TestCase;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author hankcs
@@ -76,7 +61,7 @@ public class TestMakeTranslateName extends TestCase
     public void testQuery() throws Exception
     {
         assertTrue(TranslatedPersonDictionary.containsKey("汤姆"));
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        System.out.println(TranslatedPersonDictionary.containsKey("汤姆"));
 //        System.out.println(TranslatedPersonDictionary.containsKey("汤"));
 //        System.out.println(TranslatedPersonDictionary.containsKey("姆"));
@@ -86,13 +71,13 @@ public class TestMakeTranslateName extends TestCase
 //
 //    public void testSeg() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        System.out.println(StandardTokenizer.segment("齐格林斯基"));
 //    }
 //
 //    public void testNonRec() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        DijkstraSegment segment = new DijkstraSegment();
 //        segment.enableTranslatedNameRecognize(true);
 //        System.out.println(segment.seg("汤姆和杰克逊"));

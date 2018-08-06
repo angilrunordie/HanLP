@@ -11,14 +11,7 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.TFDictionary;
-import com.sudonlp.corpus.occurrence.TermFrequency;
-import com.sudonlp.dictionary.CoreDictionary;
 import junit.framework.TestCase;
-
-import java.io.*;
-import java.util.*;
 
 /**
  * 有一些类似于 工程@学 1 的条目会干扰 工程学家 的识别，这类@后接短字符的可以过滤掉
@@ -87,7 +80,7 @@ public class SimplifyNGramDictionary extends TestCase
 ////        }
 //        // 对人名的终极调优
 //        TFDictionary dictionary = new TFDictionary();
-//        dictionary.load("D:\\JavaProjects\\HanLP\\data\\dictionary\\CoreNatureDictionary.ngram.mini.txt");
+//        dictionary.load("D:\\JavaProjects\\SudoNLP\\data\\dictionary\\CoreNatureDictionary.ngram.mini.txt");
 //        iterator = entrySet.iterator();
 //        while (iterator.hasNext())
 //        {

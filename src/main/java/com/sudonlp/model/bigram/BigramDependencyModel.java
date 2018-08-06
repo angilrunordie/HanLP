@@ -11,12 +11,7 @@
  */
 package com.sudonlp.model.bigram;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.collection.trie.DoubleArrayTrie;
-import com.sudonlp.corpus.dependency.model.WordNatureWeightModelMaker;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.utility.Predefine;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.corpus.dependency.model.WordNatureWeightModelMaker;
 import com.sudonlp.corpus.io.ByteArray;
@@ -24,11 +19,8 @@ import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.utility.Predefine;
 
 import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.util.Collection;
 import java.util.TreeMap;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 2-gram依存模型，根据两个词的词和词性猜测它们最可能的依存关系
@@ -41,13 +33,13 @@ public class BigramDependencyModel
     static
     {
         long start = System.currentTimeMillis();
-        if (load(HanLP.Config.WordNatureModelPath))
+        if (load(SudoNLP.Config.WordNatureModelPath))
         {
-            Predefine.logger.info("加载依存句法二元模型" + HanLP.Config.WordNatureModelPath + "成功，耗时：" + (System.currentTimeMillis() - start) + " ms");
+            Predefine.logger.info("加载依存句法二元模型" + SudoNLP.Config.WordNatureModelPath + "成功，耗时：" + (System.currentTimeMillis() - start) + " ms");
         }
         else
         {
-            Predefine.logger.warning("加载依存句法二元模型" + HanLP.Config.WordNatureModelPath + "失败，耗时：" + (System.currentTimeMillis() - start) + " ms");
+            Predefine.logger.warning("加载依存句法二元模型" + SudoNLP.Config.WordNatureModelPath + "失败，耗时：" + (System.currentTimeMillis() - start) + " ms");
         }
     }
 

@@ -11,7 +11,7 @@
  */
 package com.sudonlp.model.perceptron.model;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.algorithm.MaxHeap;
 import com.sudonlp.collection.trie.datrie.MutableDoubleArrayTrieInteger;
 import com.sudonlp.corpus.io.ByteArray;
@@ -25,25 +25,10 @@ import com.sudonlp.model.perceptron.feature.ImmutableFeatureMDatMap;
 import com.sudonlp.model.perceptron.instance.Instance;
 import com.sudonlp.model.perceptron.tagset.TagSet;
 import com.sudonlp.utility.MathUtility;
-import com.sudonlp.algorithm.MaxHeap;
 import com.sudonlp.classification.utilities.io.ConsoleLogger;
-import com.sudonlp.collection.trie.datrie.MutableDoubleArrayTrieInteger;
-import com.sudonlp.corpus.io.ByteArray;
-import com.sudonlp.corpus.io.ByteArrayStream;
-import com.sudonlp.corpus.io.ICacheAble;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.model.perceptron.common.TaskType;
-import com.sudonlp.model.perceptron.feature.FeatureMap;
-import com.sudonlp.model.perceptron.feature.FeatureSortItem;
-import com.sudonlp.model.perceptron.feature.ImmutableFeatureMDatMap;
-import com.sudonlp.model.perceptron.instance.Instance;
-import com.sudonlp.model.perceptron.tagset.TagSet;
-import com.sudonlp.utility.MathUtility;
 
 import java.io.*;
 import java.util.*;
-
-import static com.sudonlp.classification.utilities.io.ConsoleLogger.logger;
 
 /**
  * 在线学习标注模型
@@ -396,14 +381,14 @@ public class LinearModel implements ICacheAble
      */
     public void load(String modelFile) throws IOException
     {
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
             ConsoleLogger.logger.start("加载 %s ... ", modelFile);
         ByteArrayStream byteArray = ByteArrayStream.createByteArrayStream(modelFile);
         if (!load(byteArray))
         {
             throw new IOException(String.format("%s 加载失败", modelFile));
         }
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
             ConsoleLogger.logger.finish(" 加载完毕\n");
     }
 

@@ -1,19 +1,7 @@
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.DictionaryMaker;
-import com.sudonlp.corpus.dictionary.item.Item;
 import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.seg.Segment;
-import com.sudonlp.seg.common.Term;
-import com.sudonlp.utility.Predefine;
 import junit.framework.TestCase;
-
-import java.io.*;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class CustomDictionaryTest extends TestCase
 {
@@ -120,7 +108,7 @@ public class CustomDictionaryTest extends TestCase
 //        }
 //        DictionaryMaker.load(path).saveTxtTo(path, new DictionaryMaker.Filter()
 //        {
-//            Segment segment = HanLP.newSegment().enableCustomDictionary(false);
+//            Segment segment = SudoNLP.newSegment().enableCustomDictionary(false);
 //            @Override
 //            public boolean onSave(Item item)
 //            {
@@ -149,17 +137,17 @@ public class CustomDictionaryTest extends TestCase
 //        String text = "攻城狮逆袭单身狗，迎娶白富美，走上人生巅峰";
 //        System.out.println("原始分词结果");
 //        System.out.println("CustomDictionary.get(customTerm)=" + CustomDictionary.get(customTerm));
-//        System.out.println(HanLP.segment(text));
+//        System.out.println(SudoNLP.segment(text));
 //        // 动态增加
 //        CustomDictionary.add(customTerm);
 //        System.out.println("添加自定义词组分词结果");
 //        System.out.println("CustomDictionary.get(customTerm)=" + CustomDictionary.get(customTerm));
-//        System.out.println(HanLP.segment(text));
+//        System.out.println(SudoNLP.segment(text));
 //        // 删除词语
 //        CustomDictionary.remove(customTerm);
 //        System.out.println("删除自定义词组分词结果");
 //        System.out.println("CustomDictionary.get(customTerm)=" + CustomDictionary.get(customTerm));
-//        System.out.println(HanLP.segment(text));
+//        System.out.println(SudoNLP.segment(text));
 //    }
 
     public void testIssue540() throws Exception

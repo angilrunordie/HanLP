@@ -1,6 +1,6 @@
 package com.sudonlp.corpus.io;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
 import com.sudonlp.utility.Predefine;
 import junit.framework.TestCase;
@@ -18,7 +18,7 @@ public class IIOAdapterTest extends TestCase
      */
     public void testReturnNullInIOAdapter() throws Exception
     {
-        HanLP.Config.IOAdapter = new FileIOAdapter()
+        SudoNLP.Config.IOAdapter = new FileIOAdapter()
         {
             @Override
             public InputStream open(String path) throws FileNotFoundException
@@ -35,7 +35,7 @@ public class IIOAdapterTest extends TestCase
             }
         };
 
-        HanLP.Config.enableDebug(false);
+        SudoNLP.Config.enableDebug(false);
         assertEquals(true, CoreStopWordDictionary.contains("的"));
     }
 }

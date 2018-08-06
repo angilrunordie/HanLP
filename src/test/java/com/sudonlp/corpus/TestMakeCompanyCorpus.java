@@ -11,19 +11,7 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.corpus.dictionary.DictionaryMaker;
-import com.sudonlp.corpus.dictionary.EasyDictionary;
-import com.sudonlp.corpus.dictionary.NTDictionaryMaker;
-import com.sudonlp.corpus.document.CorpusLoader;
-import com.sudonlp.corpus.document.Document;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.seg.Dijkstra.DijkstraSegment;
-import com.sudonlp.seg.common.Term;
 import junit.framework.TestCase;
-
-import java.io.*;
-import java.util.List;
 
 
 /**
@@ -77,7 +65,7 @@ public class TestMakeCompanyCorpus extends TestCase
 //                nsDictionaryMaker.compute(document.getComplexSentenceList());
 //            }
 //        });
-//        nsDictionaryMaker.saveTxtTo("D:\\JavaProjects\\HanLP\\data\\dictionary\\organization\\outerNT");
+//        nsDictionaryMaker.saveTxtTo("D:\\JavaProjects\\SudoNLP\\data\\dictionary\\organization\\outerNT");
 //    }
 //
 //    public void testSplitLargeFile() throws Exception
@@ -105,7 +93,7 @@ public class TestMakeCompanyCorpus extends TestCase
 //
 //    public void testCase() throws Exception
 //    {
-//        HanLP.Config.enableDebug();
+//        SudoNLP.Config.enableDebug();
 //        DijkstraSegment segment = new DijkstraSegment();
 //        segment.enableOrganizationRecognize(true);
 //        System.out.println(segment.seg("黑龙江建筑职业技术学院近百学生发生冲突"));

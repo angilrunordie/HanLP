@@ -12,7 +12,7 @@
 package com.sudonlp.dictionary;
 
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.collection.trie.DoubleArrayTrie;
 import com.sudonlp.collection.trie.bintrie.BinTrie;
@@ -23,7 +23,6 @@ import com.sudonlp.dictionary.other.CharTable;
 import com.sudonlp.utility.LexiconUtility;
 import com.sudonlp.utility.Predefine;
 import com.sudonlp.utility.TextUtility;
-import com.sudonlp.dictionary.other.CharTable;
 
 import java.io.*;
 import java.util.*;
@@ -47,7 +46,7 @@ public class CustomDictionary
     // 自动加载词典
     static
     {
-        String path[] = HanLP.Config.CustomDictionaryPath;
+        String path[] = SudoNLP.Config.CustomDictionaryPath;
         long start = System.currentTimeMillis();
         if (!loadMainDictionary(path[0]))
         {
@@ -68,7 +67,7 @@ public class CustomDictionary
         LinkedHashSet<Nature> customNatureCollector = new LinkedHashSet<Nature>();
         try
         {
-            String path[] = HanLP.Config.CustomDictionaryPath;
+            String path[] = SudoNLP.Config.CustomDictionaryPath;
             for (String p : path)
             {
                 Nature defaultNature = Nature.n;
@@ -166,7 +165,7 @@ public class CustomDictionary
                 }
                 String[] param = line.split(splitter);
                 if (param[0].length() == 0) continue;   // 排除空行
-                if (HanLP.Config.Normalization) param[0] = CharTable.convert(param[0]); // 正规化
+                if (SudoNLP.Config.Normalization) param[0] = CharTable.convert(param[0]); // 正规化
 
                 int natureCount = (param.length - 1) / 2;
                 CoreDictionary.Attribute attribute;
@@ -256,7 +255,7 @@ public class CustomDictionary
      */
     public static boolean add(String word)
     {
-        if (HanLP.Config.Normalization) word = CharTable.convert(word);
+        if (SudoNLP.Config.Normalization) word = CharTable.convert(word);
         if (contains(word)) return false;
         return insert(word, null);
     }
@@ -272,7 +271,7 @@ public class CustomDictionary
     public static boolean insert(String word, String natureWithFrequency)
     {
         if (word == null) return false;
-        if (HanLP.Config.Normalization) word = CharTable.convert(word);
+        if (SudoNLP.Config.Normalization) word = CharTable.convert(word);
         CoreDictionary.Attribute att = natureWithFrequency == null ? new CoreDictionary.Attribute(Nature.nz, 1) : CoreDictionary.Attribute.create(natureWithFrequency);
         if (att == null) return false;
         if (dat.set(word, att)) return true;
@@ -347,7 +346,7 @@ public class CustomDictionary
      */
     public static CoreDictionary.Attribute get(String key)
     {
-        if (HanLP.Config.Normalization) key = CharTable.convert(key);
+        if (SudoNLP.Config.Normalization) key = CharTable.convert(key);
         CoreDictionary.Attribute attribute = dat.get(key);
         if (attribute != null) return attribute;
         if (trie == null) return null;
@@ -362,7 +361,7 @@ public class CustomDictionary
      */
     public static void remove(String key)
     {
-        if (HanLP.Config.Normalization) key = CharTable.convert(key);
+        if (SudoNLP.Config.Normalization) key = CharTable.convert(key);
         if (trie == null) return;
         trie.remove(key);
     }
@@ -576,12 +575,12 @@ public class CustomDictionary
 
     /**
      * 热更新（重新加载）<br>
-     * 集群环境（或其他IOAdapter）需要自行删除缓存文件（路径 = HanLP.Config.CustomDictionaryPath[0] + Predefine.BIN_EXT）
+     * 集群环境（或其他IOAdapter）需要自行删除缓存文件（路径 = SudoNLP.Config.CustomDictionaryPath[0] + Predefine.BIN_EXT）
      * @return 是否加载成功
      */
     public static boolean reload()
     {
-        String path[] = HanLP.Config.CustomDictionaryPath;
+        String path[] = SudoNLP.Config.CustomDictionaryPath;
         if (path == null || path.length == 0) return false;
         IOUtil.deleteFile(path[0] + Predefine.BIN_EXT); // 删掉缓存
         return loadMainDictionary(path[0]);

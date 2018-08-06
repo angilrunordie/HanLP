@@ -11,12 +11,6 @@
  */
 package com.sudonlp.corpus;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.dictionary.py.Pinyin;
-import com.sudonlp.dictionary.py.PinyinDictionary;
-import com.sudonlp.dictionary.py.PinyinUtil;
-import com.sudonlp.dictionary.py.String2PinyinConverter;
-import com.sudonlp.utility.TextUtility;
 import junit.framework.TestCase;
 
 /**
@@ -51,8 +45,8 @@ public class TestPinyinGuesser extends TestCase
 //
 //    public void testPinyin() throws Exception
 //    {
-//        System.out.println(HanLP.convertToPinyinString("截至2012年，", " ", true));
-//        System.out.println(HanLP.convertToPinyinString("截至2012年，", " ", false));
+//        System.out.println(SudoNLP.convertToPinyinString("截至2012年，", " ", true));
+//        System.out.println(SudoNLP.convertToPinyinString("截至2012年，", " ", false));
 //    }
 //
 //    private Pinyin convert(Pinyin p)

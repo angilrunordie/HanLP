@@ -11,13 +11,11 @@
  */
 package com.sudonlp.tokenizer;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
 import com.sudonlp.dictionary.stopword.Filter;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
-import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
-import com.sudonlp.dictionary.stopword.Filter;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -32,7 +30,7 @@ public class NotionalTokenizer
     /**
      * 预置分词器
      */
-    public static Segment SEGMENT = HanLP.newSegment();
+    public static Segment SEGMENT = SudoNLP.newSegment();
 
     public static List<Term> segment(String text)
     {

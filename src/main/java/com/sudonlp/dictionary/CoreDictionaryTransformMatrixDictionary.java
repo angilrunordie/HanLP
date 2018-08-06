@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.tag.Nature;
 import static com.sudonlp.utility.Predefine.logger;
 
@@ -33,13 +33,13 @@ public class CoreDictionaryTransformMatrixDictionary
             }
         };
         long start = System.currentTimeMillis();
-        if (!transformMatrixDictionary.load(HanLP.Config.CoreDictionaryTransformMatrixDictionaryPath))
+        if (!transformMatrixDictionary.load(SudoNLP.Config.CoreDictionaryTransformMatrixDictionaryPath))
         {
-            throw new IllegalArgumentException("加载核心词典词性转移矩阵" + HanLP.Config.CoreDictionaryTransformMatrixDictionaryPath + "失败");
+            throw new IllegalArgumentException("加载核心词典词性转移矩阵" + SudoNLP.Config.CoreDictionaryTransformMatrixDictionaryPath + "失败");
         }
         else
         {
-            logger.info("加载核心词典词性转移矩阵" + HanLP.Config.CoreDictionaryTransformMatrixDictionaryPath + "成功，耗时：" + (System.currentTimeMillis() - start) + " ms");
+            logger.info("加载核心词典词性转移矩阵" + SudoNLP.Config.CoreDictionaryTransformMatrixDictionaryPath + "成功，耗时：" + (System.currentTimeMillis() - start) + " ms");
         }
     }
 }

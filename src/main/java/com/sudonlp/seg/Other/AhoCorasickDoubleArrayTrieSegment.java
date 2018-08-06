@@ -10,7 +10,7 @@
  */
 package com.sudonlp.seg.Other;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.corpus.tag.Nature;
@@ -19,18 +19,10 @@ import com.sudonlp.seg.DictionaryBasedSegment;
 import com.sudonlp.seg.Segment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.TextUtility;
-import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.sudonlp.corpus.io.IOUtil;
-import com.sudonlp.corpus.tag.Nature;
-import com.sudonlp.dictionary.CoreDictionary;
-import com.sudonlp.seg.common.Term;
 import com.sudonlp.utility.Predefine;
-import com.sudonlp.utility.TextUtility;
 
 import java.io.IOException;
 import java.util.*;
-
-import static com.sudonlp.utility.Predefine.logger;
 
 /**
  * 使用AhoCorasickDoubleArrayTrie实现的最长分词器<br>
@@ -44,7 +36,7 @@ public class AhoCorasickDoubleArrayTrieSegment extends DictionaryBasedSegment
 
     public AhoCorasickDoubleArrayTrieSegment() throws IOException
     {
-        this(HanLP.Config.CoreDictionaryPath);
+        this(SudoNLP.Config.CoreDictionaryPath);
     }
 
     public AhoCorasickDoubleArrayTrieSegment(TreeMap<String, CoreDictionary.Attribute> dictionary)

@@ -1,6 +1,5 @@
 package com.sudonlp.model.crf;
 
-import com.sudonlp.HanLP;
 import junit.framework.TestCase;
 
 public class CRFNERecognizerTest extends TestCase

@@ -11,7 +11,7 @@
  */
 package com.sudonlp.dictionary.stopword;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.io.ByteArray;
 import com.sudonlp.corpus.io.IOUtil;
 import com.sudonlp.seg.common.Term;
@@ -19,7 +19,6 @@ import com.sudonlp.utility.Predefine;
 import com.sudonlp.utility.TextUtility;
 
 import java.io.DataOutputStream;
-import java.io.File;
 import java.util.List;
 import java.util.ListIterator;
 import static com.sudonlp.utility.Predefine.logger;
@@ -34,19 +33,19 @@ public class CoreStopWordDictionary
     static StopWordDictionary dictionary;
     static
     {
-        ByteArray byteArray = ByteArray.createByteArray(HanLP.Config.CoreStopWordDictionaryPath + Predefine.BIN_EXT);
+        ByteArray byteArray = ByteArray.createByteArray(SudoNLP.Config.CoreStopWordDictionaryPath + Predefine.BIN_EXT);
         if (byteArray == null)
         {
             try
             {
-                dictionary = new StopWordDictionary(HanLP.Config.CoreStopWordDictionaryPath);
-                DataOutputStream out = new DataOutputStream(IOUtil.newOutputStream(HanLP.Config.CoreStopWordDictionaryPath + Predefine.BIN_EXT));
+                dictionary = new StopWordDictionary(SudoNLP.Config.CoreStopWordDictionaryPath);
+                DataOutputStream out = new DataOutputStream(IOUtil.newOutputStream(SudoNLP.Config.CoreStopWordDictionaryPath + Predefine.BIN_EXT));
                 dictionary.save(out);
                 out.close();
             }
             catch (Exception e)
             {
-                logger.severe("载入停用词词典" + HanLP.Config.CoreStopWordDictionaryPath + "失败"  + TextUtility.exceptionToString(e));
+                logger.severe("载入停用词词典" + SudoNLP.Config.CoreStopWordDictionaryPath + "失败"  + TextUtility.exceptionToString(e));
             }
         }
         else

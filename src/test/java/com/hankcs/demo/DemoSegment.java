@@ -11,8 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.sudonlp.HanLP;
-import com.sudonlp.seg.Segment;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.seg.common.Term;
 
 import java.util.List;
@@ -38,7 +37,7 @@ public class DemoSegment
         };
         for (String sentence : testCase)
         {
-            List<Term> termList = HanLP.segment(sentence);
+            List<Term> termList = SudoNLP.segment(sentence);
             System.out.println(termList);
         }
     }

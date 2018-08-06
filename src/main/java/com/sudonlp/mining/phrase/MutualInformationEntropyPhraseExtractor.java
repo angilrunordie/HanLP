@@ -11,15 +11,12 @@
  */
 package com.sudonlp.mining.phrase;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.corpus.occurrence.Occurrence;
 import com.sudonlp.corpus.occurrence.PairFrequency;
 import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
 import com.sudonlp.dictionary.stopword.Filter;
 import com.sudonlp.seg.common.Term;
-import com.sudonlp.tokenizer.NotionalTokenizer;
-import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
-import com.sudonlp.dictionary.stopword.Filter;
 import com.sudonlp.tokenizer.NotionalTokenizer;
 
 import java.util.LinkedList;
@@ -55,14 +52,14 @@ public class MutualInformationEntropyPhraseExtractor implements IPhraseExtractor
                 };
         for (List<Term> sentence : NotionalTokenizer.seg2sentence(text, filterChain))
         {
-            if (HanLP.Config.DEBUG)
+            if (SudoNLP.Config.DEBUG)
             {
                 System.out.println(sentence);
             }
             occurrence.addAll(sentence);
         }
         occurrence.compute();
-        if (HanLP.Config.DEBUG)
+        if (SudoNLP.Config.DEBUG)
         {
             System.out.println(occurrence);
             for (PairFrequency phrase : occurrence.getPhraseByMi())

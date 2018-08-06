@@ -11,16 +11,11 @@
  */
 package com.sudonlp.model.perceptron;
 
-import com.sudonlp.HanLP;
+import com.sudonlp.SudoNLP;
 import com.sudonlp.dictionary.other.CharTable;
 import com.sudonlp.model.perceptron.model.LinearModel;
 import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.tokenizer.lexical.AbstractLexicalAnalyzer;
-import com.sudonlp.corpus.document.sentence.Sentence;
-import com.sudonlp.dictionary.other.CharTable;
-import com.sudonlp.model.perceptron.model.LinearModel;
-import com.sudonlp.model.perceptron.utility.Utility;
 import com.sudonlp.tokenizer.lexical.AbstractLexicalAnalyzer;
 
 import java.io.IOException;
@@ -83,7 +78,7 @@ public class PerceptronLexicalAnalyzer extends AbstractLexicalAnalyzer
      */
     public PerceptronLexicalAnalyzer() throws IOException
     {
-        this(HanLP.Config.PerceptronCWSModelPath, HanLP.Config.PerceptronPOSModelPath, HanLP.Config.PerceptronNERModelPath);
+        this(SudoNLP.Config.PerceptronCWSModelPath, SudoNLP.Config.PerceptronPOSModelPath, SudoNLP.Config.PerceptronNERModelPath);
     }
 
     /**
