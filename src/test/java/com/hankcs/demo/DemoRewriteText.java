@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.dictionary.CoreSynonymDictionary;
+import com.sudonlp.dictionary.CoreSynonymDictionary;
 
 /**
  * @author hankcs

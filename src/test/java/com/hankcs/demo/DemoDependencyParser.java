@@ -11,10 +11,10 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLSentence;
-import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLWord;
-import com.hankcs.hanlp.utility.TestUtility;
+import com.sudonlp.HanLP;
+import com.sudonlp.corpus.dependency.CoNll.CoNLLSentence;
+import com.sudonlp.corpus.dependency.CoNll.CoNLLWord;
+import com.sudonlp.utility.TestUtility;
 
 /**
  * 依存句法分析（CRF句法模型需要-Xms512m -Xmx512m -Xmn256m，MaxEnt和神经网络句法模型需要-Xms1g -Xmx1g -Xmn512m）

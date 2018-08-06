@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.suggest.Suggester;
+import com.sudonlp.suggest.Suggester;
 
 /**
  * 文本推荐(句子级别，从一系列句子中挑出与输入句子最相似的那一个)

@@ -10,8 +10,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.model.crf.CRFLexicalAnalyzer;
-import com.hankcs.hanlp.utility.TestUtility;
+import com.sudonlp.model.crf.CRFLexicalAnalyzer;
+import com.sudonlp.utility.TestUtility;
 
 import java.io.IOException;
 

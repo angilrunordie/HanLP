@@ -11,16 +11,16 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.corpus.tag.Nature;
-import com.hankcs.hanlp.dictionary.CustomDictionary;
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.StandardTokenizer;
-import com.hankcs.hanlp.utility.LexiconUtility;
+import com.sudonlp.HanLP;
+import com.sudonlp.corpus.tag.Nature;
+import com.sudonlp.dictionary.CustomDictionary;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.tokenizer.StandardTokenizer;
+import com.sudonlp.utility.LexiconUtility;
 
 import java.util.List;
 
-import static com.hankcs.hanlp.corpus.tag.Nature.n;
+import static com.sudonlp.corpus.tag.Nature.n;
 
 /**
  * 演示自定义词性,以及往词典中插入自定义词性的词语

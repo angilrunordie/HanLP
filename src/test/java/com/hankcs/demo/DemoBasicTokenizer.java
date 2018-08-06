@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.tokenizer.BasicTokenizer;
+import com.sudonlp.tokenizer.BasicTokenizer;
 
 /**
  * 演示基础分词，基础分词只进行基本NGram分词，不识别命名实体，不使用用户词典

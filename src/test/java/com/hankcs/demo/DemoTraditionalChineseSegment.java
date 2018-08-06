@@ -11,8 +11,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.TraditionalChineseTokenizer;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.tokenizer.TraditionalChineseTokenizer;
 
 import java.util.List;
 

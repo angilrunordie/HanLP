@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
+import com.sudonlp.HanLP;
 
 /**
  * 将简繁转换做到极致

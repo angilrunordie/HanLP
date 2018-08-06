@@ -11,9 +11,9 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.corpus.tag.Nature;
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.URLTokenizer;
+import com.sudonlp.corpus.tag.Nature;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.tokenizer.URLTokenizer;
 
 import java.util.List;
 

@@ -1,15 +1,15 @@
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.model.perceptron.CWSTrainer;
-import com.hankcs.hanlp.corpus.MSR;
-import com.hankcs.hanlp.model.perceptron.PerceptronLexicalAnalyzer;
-import com.hankcs.hanlp.model.perceptron.PerceptronTrainer;
-import com.hankcs.hanlp.seg.Segment;
-import com.hankcs.hanlp.seg.common.CWSEvaluator;
+import com.sudonlp.model.perceptron.CWSTrainer;
+import com.sudonlp.corpus.MSR;
+import com.sudonlp.model.perceptron.PerceptronLexicalAnalyzer;
+import com.sudonlp.model.perceptron.PerceptronTrainer;
+import com.sudonlp.seg.Segment;
+import com.sudonlp.seg.common.CWSEvaluator;
 
 import java.io.IOException;
 
-import static com.hankcs.hanlp.classification.utilities.io.ConsoleLogger.logger;
+import static com.sudonlp.classification.utilities.io.ConsoleLogger.logger;
 
 /**
  * 演示如何正确规范地评测中文分词的准确率<br>

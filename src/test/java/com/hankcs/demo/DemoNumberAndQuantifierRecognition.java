@@ -10,7 +10,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.tokenizer.StandardTokenizer;
+import com.sudonlp.tokenizer.StandardTokenizer;
 
 /**
  * 演示数词和数量词识别

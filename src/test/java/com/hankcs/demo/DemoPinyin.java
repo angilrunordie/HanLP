@@ -11,8 +11,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.dictionary.py.Pinyin;
+import com.sudonlp.HanLP;
+import com.sudonlp.dictionary.py.Pinyin;
 
 import java.util.List;
 

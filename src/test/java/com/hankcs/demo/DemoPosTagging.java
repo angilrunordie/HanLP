@@ -11,8 +11,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.seg.Segment;
+import com.sudonlp.HanLP;
+import com.sudonlp.seg.Segment;
 
 /**
  * 词性标注

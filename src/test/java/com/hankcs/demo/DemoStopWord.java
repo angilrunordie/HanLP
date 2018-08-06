@@ -11,15 +11,15 @@
 package com.hankcs.demo;
 
 
-import com.hankcs.hanlp.dictionary.stopword.CoreStopWordDictionary;
-import com.hankcs.hanlp.dictionary.stopword.Filter;
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.BasicTokenizer;
-import com.hankcs.hanlp.tokenizer.NotionalTokenizer;
+import com.sudonlp.dictionary.stopword.CoreStopWordDictionary;
+import com.sudonlp.dictionary.stopword.Filter;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.tokenizer.BasicTokenizer;
+import com.sudonlp.tokenizer.NotionalTokenizer;
 
 import java.util.List;
 
-import static com.hankcs.hanlp.corpus.tag.Nature.nz;
+import static com.sudonlp.corpus.tag.Nature.nz;
 
 /**
  * 演示如何去除停用词

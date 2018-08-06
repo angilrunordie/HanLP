@@ -10,11 +10,11 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.hankcs.hanlp.corpus.dictionary.StringDictionary;
-import com.hankcs.hanlp.seg.Other.CommonAhoCorasickDoubleArrayTrieSegment;
-import com.hankcs.hanlp.seg.Other.CommonAhoCorasickSegmentUtil;
+import com.sudonlp.HanLP;
+import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
+import com.sudonlp.corpus.dictionary.StringDictionary;
+import com.sudonlp.seg.Other.CommonAhoCorasickDoubleArrayTrieSegment;
+import com.sudonlp.seg.Other.CommonAhoCorasickSegmentUtil;
 
 import java.util.Map;
 import java.util.Set;

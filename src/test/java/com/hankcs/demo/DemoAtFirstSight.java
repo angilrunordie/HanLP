@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
+import com.sudonlp.HanLP;
 
 /**
  * 第一个Demo，惊鸿一瞥

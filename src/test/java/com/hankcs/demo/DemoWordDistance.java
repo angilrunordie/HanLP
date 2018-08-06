@@ -11,7 +11,7 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.dictionary.CoreSynonymDictionary;
+import com.sudonlp.dictionary.CoreSynonymDictionary;
 
 /**
  * 语义距离

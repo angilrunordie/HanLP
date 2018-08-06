@@ -10,8 +10,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.dictionary.CustomDictionary;
+import com.sudonlp.HanLP;
+import com.sudonlp.dictionary.CustomDictionary;
 
 /**
  * 演示正规化字符配置项的效果（繁体->简体，全角->半角，大写->小写）。

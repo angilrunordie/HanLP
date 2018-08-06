@@ -11,9 +11,9 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.seg.NShort.NShortSegment;
-import com.hankcs.hanlp.seg.Segment;
-import com.hankcs.hanlp.seg.Viterbi.ViterbiSegment;
+import com.sudonlp.seg.NShort.NShortSegment;
+import com.sudonlp.seg.Segment;
+import com.sudonlp.seg.Viterbi.ViterbiSegment;
 
 /**
  * N最短路径分词，该分词器比最短路分词器慢，但是效果稍微好一些，对命名实体识别能力更强

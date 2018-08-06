@@ -11,11 +11,11 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.seg.CRF.CRFSegment;
-import com.hankcs.hanlp.seg.Segment;
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.utility.TestUtility;
+import com.sudonlp.HanLP;
+import com.sudonlp.seg.CRF.CRFSegment;
+import com.sudonlp.seg.Segment;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.utility.TestUtility;
 
 import java.util.List;
 

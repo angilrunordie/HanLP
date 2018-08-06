@@ -10,10 +10,10 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.model.crf.CRFLexicalAnalyzer;
-import com.hankcs.hanlp.seg.CRF.CRFSegment;
-import com.hankcs.hanlp.seg.Segment;
+import com.sudonlp.HanLP;
+import com.sudonlp.model.crf.CRFLexicalAnalyzer;
+import com.sudonlp.seg.CRF.CRFSegment;
+import com.sudonlp.seg.Segment;
 
 import java.io.IOException;
 

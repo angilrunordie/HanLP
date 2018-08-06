@@ -10,9 +10,9 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.model.perceptron.PerceptronLexicalAnalyzer;
-import com.hankcs.hanlp.utility.TestUtility;
+import com.sudonlp.HanLP;
+import com.sudonlp.model.perceptron.PerceptronLexicalAnalyzer;
+import com.sudonlp.utility.TestUtility;
 
 import java.io.IOException;
 

@@ -11,11 +11,11 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
-import com.hankcs.hanlp.dictionary.BaseSearcher;
-import com.hankcs.hanlp.dictionary.CoreDictionary;
-import com.hankcs.hanlp.dictionary.CustomDictionary;
+import com.sudonlp.HanLP;
+import com.sudonlp.collection.AhoCorasick.AhoCorasickDoubleArrayTrie;
+import com.sudonlp.dictionary.BaseSearcher;
+import com.sudonlp.dictionary.CoreDictionary;
+import com.sudonlp.dictionary.CustomDictionary;
 
 import java.util.Map;
 

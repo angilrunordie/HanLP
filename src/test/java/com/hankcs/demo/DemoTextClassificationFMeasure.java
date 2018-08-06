@@ -11,15 +11,15 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.classification.classifiers.IClassifier;
-import com.hankcs.hanlp.classification.classifiers.NaiveBayesClassifier;
-import com.hankcs.hanlp.classification.corpus.FileDataSet;
-import com.hankcs.hanlp.classification.corpus.IDataSet;
-import com.hankcs.hanlp.classification.corpus.MemoryDataSet;
-import com.hankcs.hanlp.classification.statistics.evaluations.Evaluator;
-import com.hankcs.hanlp.classification.statistics.evaluations.FMeasure;
-import com.hankcs.hanlp.classification.tokenizers.BigramTokenizer;
-import com.hankcs.hanlp.classification.tokenizers.HanLPTokenizer;
+import com.sudonlp.classification.classifiers.IClassifier;
+import com.sudonlp.classification.classifiers.NaiveBayesClassifier;
+import com.sudonlp.classification.corpus.FileDataSet;
+import com.sudonlp.classification.corpus.IDataSet;
+import com.sudonlp.classification.corpus.MemoryDataSet;
+import com.sudonlp.classification.statistics.evaluations.Evaluator;
+import com.sudonlp.classification.statistics.evaluations.FMeasure;
+import com.sudonlp.classification.tokenizers.BigramTokenizer;
+import com.sudonlp.classification.tokenizers.HanLPTokenizer;
 
 import java.io.IOException;
 

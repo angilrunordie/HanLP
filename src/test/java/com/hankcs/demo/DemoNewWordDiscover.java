@@ -10,9 +10,9 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.corpus.io.IOUtil;
-import com.hankcs.hanlp.mining.word.WordInfo;
+import com.sudonlp.HanLP;
+import com.sudonlp.corpus.io.IOUtil;
+import com.sudonlp.mining.word.WordInfo;
 
 import java.io.IOException;
 import java.util.List;

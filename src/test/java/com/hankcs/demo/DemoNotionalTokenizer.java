@@ -11,8 +11,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.NotionalTokenizer;
+import com.sudonlp.seg.common.Term;
+import com.sudonlp.tokenizer.NotionalTokenizer;
 
 import java.util.List;
 

@@ -12,9 +12,9 @@
 package com.hankcs.demo;
 
 
-import com.hankcs.hanlp.classification.classifiers.IClassifier;
-import com.hankcs.hanlp.classification.classifiers.NaiveBayesClassifier;
-import com.hankcs.hanlp.utility.TestUtility;
+import com.sudonlp.classification.classifiers.IClassifier;
+import com.sudonlp.classification.classifiers.NaiveBayesClassifier;
+import com.sudonlp.utility.TestUtility;
 
 import java.io.File;
 import java.io.IOException;

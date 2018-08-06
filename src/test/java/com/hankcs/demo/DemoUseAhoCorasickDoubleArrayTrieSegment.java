@@ -11,8 +11,8 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.seg.Other.AhoCorasickDoubleArrayTrieSegment;
+import com.sudonlp.HanLP;
+import com.sudonlp.seg.Other.AhoCorasickDoubleArrayTrieSegment;
 
 import java.io.IOException;
 

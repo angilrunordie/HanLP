@@ -11,10 +11,10 @@
  */
 package com.hankcs.demo;
 
-import com.hankcs.hanlp.corpus.occurrence.Occurrence;
-import com.hankcs.hanlp.corpus.occurrence.PairFrequency;
-import com.hankcs.hanlp.corpus.occurrence.TermFrequency;
-import com.hankcs.hanlp.corpus.occurrence.TriaFrequency;
+import com.sudonlp.corpus.occurrence.Occurrence;
+import com.sudonlp.corpus.occurrence.PairFrequency;
+import com.sudonlp.corpus.occurrence.TermFrequency;
+import com.sudonlp.corpus.occurrence.TriaFrequency;
 
 import java.util.Map;
 import java.util.Set;
