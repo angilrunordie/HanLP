@@ -7,6 +7,6 @@ public class DemoSudoSegment {
     public static void main(String[] args){
         SoduSegment segment = new SoduSegment();
         SudoNLP.Config.enableDebug();
-        System.out.println(segment.seg("李亚鹏吃香蕉后消化不良，以为得了心脏病，时常头痛，呕吐！"));
+        System.out.println(segment.seg("李亚鹏吃一个香蕉后消化不良，以为得了心脏病，时常头痛，呕吐！"));
     }
 }

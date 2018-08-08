@@ -142,6 +142,11 @@ public class MathUtility
         {
             value = -value;
         }
+
+        if (frequency == 1 && nTwoWordsFreq == 1){
+            // 这条语句为了解决 frequency 与 nTwoWordsFreq 都找不到时 weight 还很小的问题。   原因，value 的第二部分时根据条件概率算出来的，当frequency与nTwoWordsFreq 都为 1 时，条件概率为 1 .
+            value = 10.0;
+        }
 //        logger.info(String.format("%5s frequency:%6d, %s nTwoWordsFreq:%3d, weight:%.2f", from.word, frequency, from.word + "@" + to.word, nTwoWordsFreq, value));
         return value;
     }

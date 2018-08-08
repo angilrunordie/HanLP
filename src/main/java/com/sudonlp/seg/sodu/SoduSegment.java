@@ -1,6 +1,8 @@
 package com.sudonlp.seg.sodu;
 
 import com.sudonlp.SudoNLP;
+import com.sudonlp.collection.trie.DoubleArrayTrie;
+import com.sudonlp.dictionary.CoreDictionary;
 import com.sudonlp.recognition.medicine.*;
 import com.sudonlp.recognition.nr.JapanesePersonRecognition;
 import com.sudonlp.recognition.nr.PersonRecognition;
@@ -11,9 +13,10 @@ import com.sudonlp.seg.WordBasedSegment;
 import com.sudonlp.seg.common.Term;
 import com.sudonlp.seg.common.Vertex;
 import com.sudonlp.seg.common.WordNet;
+import com.sudonlp.utility.Predefine;
+import scala.Predef;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class SoduSegment extends WordBasedSegment {
     @Override
@@ -33,47 +36,151 @@ public class SoduSegment extends WordBasedSegment {
         List<Vertex> vertexList = viterbi(wordNetAll);
 //        System.out.println("最短路：" + (System.currentTimeMillis() - start));
 
-//        if (config.useCustomDictionary)     // 这里去掉对 自定义词典 的使用
-//        {
-//            if (config.indexMode > 0)
-//                combineByCustomDictionary(vertexList, wordNetAll);
-//            else combineByCustomDictionary(vertexList);
-//        }
-
         if (SudoNLP.Config.DEBUG)
         {
             System.out.println("粗分结果" + convert(vertexList, false));
+        }
+
+        Set<String> priorNeSet = new HashSet<String>(); // 用于存储优先级别高的实体类型。这些实体类型被分出来之后，不可以被合并和替换。
+        if(config.medicineNeRecognize){  // 这里医疗分词占主导地位，后续的分词结果不能够覆盖医疗分词的结果。
+            WordNet wordNetOptinum = new WordNet(sentence, vertexList);
+            if(config.drugNameRecognize){
+                MedicineDrugRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.drugName);
+            }
+
+            if(config.foodNameRecognize){
+                MedicineFoodRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.foodName);
+            }
+
+            if(config.diseaseNameRecognize){
+                MedicineDiseaseNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.diseaseName);
+                for(String disease : Predefine.diseaseNameClassifications){
+                    priorNeSet.add(disease);  // 逐个加入疾病类别
+                }
+            }
+
+            if(config.bodyPartRecognize){
+                MedicineBodyPartNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.bodyPart);
+            }
+
+            if(config.bodaBadFeelRecognize){
+                MedicineBodyBadFeelRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.BodyBadFeel);
+            }
+
+            if(config.behaviorRecognize){
+                MedicineBehaviorRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.behaviorName);
+            }
+
+            if(config.checkMethodRecognize){
+                MedicineCheckMethodRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.checkMethodName);
+            }
+
+            if(config.diseaseStageRecognize){
+                MedicineDiseaseStageRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.diseaseStageName);
+            }
+
+            if(config.functionNameRecognize){
+                MedicineFunctionNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.functionName);
+            }
+
+            if(config.mentalFeelRecognize){
+                MedicineMentalFeelRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.mentalFeelName);
+            }
+
+            if(config.symptomRecognize){
+                MedicineSymptomNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.symptomName);
+            }
+
+            if(config.treatMethodRecognize){
+                MedicineTreatMethodRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
+                priorNeSet.add(Predefine.treatMethodName);
+            }
+
+            vertexList = viterbi_sodu(wordNetOptinum);
+        }
+
+        // 在这里加入对核心字典的使用
+        { // 写到块里面是为了增加程序的独立性
+            WordNet wordNetOptinum = new WordNet(sentence, vertexList);
+            DoubleArrayTrie<CoreDictionary.Attribute>.Searcher searcher = CoreDictionary.trie.getSearcher(sentence, 0);
+            for(int i = 1; i < wordNetOptinum.getVertexes().length - 1; i++){
+                // 这里删除掉非优先的实体分词
+                if(wordNetOptinum.getVertexes()[i].size() == 1 && !priorNeSet.contains(wordNetOptinum.getVertexes()[i].get(0).attribute.nature[0].toString())){
+                    wordNetOptinum.getVertexes()[i] = new LinkedList<Vertex>();
+                }
+            }
+
+            int[] ifPrior = new int[sentence.length];
+            int index = 0;
+            for(int i = 1; i < vertexList.size() - 1; i++){
+                if(priorNeSet.contains(vertexList.get(i).attribute.nature[0].toString())){
+                    for(int j = index; j < index + vertexList.get(i).word.length(); j++){
+                        ifPrior[j] = 1;
+                    }
+                    index = index + vertexList.get(i).word.length();
+                }else{
+                    for(int j = index; j < index + vertexList.get(i).word.length(); j++){
+                        ifPrior[j] = 0;
+                    }
+                    index = index + vertexList.get(i).word.length();
+                }
+            }
+            while(searcher.next()){
+                // 首先查看这个分词是否会覆盖 priorNeSet 中的类型。
+                boolean flag = true;
+                for(int i = searcher.begin; i < searcher.begin + searcher.length; i++){
+                    if(ifPrior[i] == 1){
+                        flag = false; break;
+                    }
+                }
+                if(flag){
+                    wordNetOptinum.add(searcher.begin + 1, new Vertex(new String(sentence, searcher.begin, searcher.length), searcher.value, searcher.index)); // add 函数已经保证了唯一性，即不会与之前的分词结果重合，但无法解决覆盖问题。
+                }
+            }
+
+            LinkedList<Vertex>[] vertexes = wordNetOptinum.getVertexes();
+            for (int i = 1; i < vertexes.length; )
+            {
+                if (vertexes[i].isEmpty())
+                {
+                    int j = i + 1;
+                    for (; j < vertexes.length - 1; ++j)
+                    {
+                        if (!vertexes[j].isEmpty()) break;
+                    }
+                    wordNetOptinum.add(i, quickAtomSegment(sentence, i - 1, j - 1));
+                    i = j;
+                }
+                else i += vertexes[i].getLast().realWord.length();
+            }
+
+            wordNetOptinum.cleanVertexFrom();
+            vertexList = viterbi(wordNetOptinum);
+//            System.out.println("ssss");
+        }
+
+        if (config.useCustomDictionary)     // 这里后续解决掉 当之前已经出现医疗分词结果后， 新的字典不进行覆盖。 或者不用用户字典（Good idea :)）
+        {
+            if (config.indexMode > 0)
+                combineByCustomDictionary(vertexList, wordNetAll);
+            else combineByCustomDictionary(vertexList);
         }
 
         // 数字识别
         if (config.numberQuantifierRecognize)
         {
             mergeNumberQuantifier(vertexList, wordNetAll, config);
-        }
-
-        if(config.medicineNeRecognize){
-            WordNet wordNetOptinum = new WordNet(sentence, vertexList);
-            if(config.drugNameRecognize){
-                MedicineDrugRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
-            }
-
-            if(config.foodNameRecognize){
-                MedicineFoodRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
-            }
-
-            if(config.diseaseNameRecognize){
-                MedicineDiseaseNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
-            }
-
-            if(config.bodyPartRecognize){
-                MedicineBodyPartNameRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
-            }
-
-            if(config.bodaBadFeelRecognize){
-                MedicineBodyBadFeelRecognition.recognition(vertexList, wordNetOptinum, wordNetAll);
-            }
-
-            vertexList = viterbi_sodu(wordNetOptinum);
         }
 
         // 实体命名识别
@@ -110,8 +217,8 @@ public class SoduSegment extends WordBasedSegment {
             if (wordNetOptimum.size() != preSize)
             {
                 wordNetOptimum.cleanVertexFrom();
-//                vertexList = viterbi(wordNetOptimum);
-                vertexList = viterbi_sodu(wordNetOptimum);
+                vertexList = viterbi(wordNetOptimum);
+//                vertexList = viterbi_sodu(wordNetOptimum);
                 if (SudoNLP.Config.DEBUG)
                 {
                     System.out.printf("细分词网：\n%s\n", wordNetOptimum);
@@ -196,6 +303,14 @@ public class SoduSegment extends WordBasedSegment {
         return vertexList;
     }
 
+    /**
+     * 使用CoreDic 中的信息进行 加入分词信息
+     * @param vertexList
+     */
+    public void useCoreDic(List<Vertex> vertexList){
+
+    }
+
     @Override
     // 在这里重写 generateWordNet 的代码，去掉根据 核心词典 分词的部分， 只保留根据字去分词
     public void generateWordNet(final WordNet wordNetStorage)
@@ -224,7 +339,7 @@ public class SoduSegment extends WordBasedSegment {
 //                }
 //            });
 //        }
-        // 原子分词，保证图连通
+//         原子分词，保证图连通
 //        LinkedList<Vertex>[] vertexes = wordNetStorage.getVertexes();
 //        for (int i = 1; i < vertexes.length; )
 //        {

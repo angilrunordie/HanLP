@@ -65,6 +65,13 @@ public class SudoNLP
         public static String BodyPartDicPath = "data/dictionary/medicine/BodyPartNames.txt"; //身体部位名的字典路径
         public static String DiseaseNameDicPath = "data/dictionary/medicine/DiseaseNames.txt"; //疾病名称的字典路径
         public static String BodyBadFeelDicPath = "data/dictionary/medicine/BodyBadFeelNames.txt"; //身体不适感受的字典路径
+        public static String BehaviorDicPath = "data/dictionary/medicine/behaviorName.txt"; //行为方式的字典路径
+        public static String FunctionDicPath = "data/dictionary/medicine/functionName.txt"; //功效的字典路径
+        public static String SymptomDicPath = "data/dictionary/medicine/symptomName.txt"; //症状的字典路径
+        public static String MentalFeelDicPath = "data/dictionary/medicine/mentalFeelName.txt"; //心理感受的字典路径
+        public static String DiseaseStageDicPath = "data/dictionary/medicine/diseaseStageName.txt"; //病情阶段的字典路径
+        public static String TreatMethodDicPath = "data/dictionary/medicine/treatMethodName.txt"; //治疗方式的字典路径
+        public static String CheckMethodDicPath = "data/dictionary/medicine/checkMethodName.txt"; //检查方式的字典路径
         /**
          * 核心词典路径
          */
@@ -203,7 +210,7 @@ public class SudoNLP
         /**
          * 是否执行字符正规化（繁体->简体，全角->半角，大写->小写），切换配置后必须删CustomDictionary.txt.bin缓存
          */
-        public static boolean Normalization = false;
+        public static boolean Normalization = true;
         /**
          * IO适配器（默认null，表示从本地文件系统读取），实现com.hankcs.hanlp.corpus.io.IIOAdapter接口
          * 以在不同的平台（Hadoop、Redis等）上运行HanLP
@@ -242,6 +249,19 @@ public class SudoNLP
                 }
                 String root = p.getProperty("root", "").replaceAll("\\\\", "/");
                 if (root.length() > 0 && !root.endsWith("/")) root += "/";
+                FoodNameDicPath = root + p.getProperty("FoodNameDicPath", FoodNameDicPath);
+                DrugNameDicPath = root + p.getProperty("DrugNameDicPath", DrugNameDicPath);
+                BodyPartDicPath = root + p.getProperty("BodyPartDicPath", BodyPartDicPath);
+                DiseaseNameDicPath = root + p.getProperty("DiseaseNameDicPath", DiseaseNameDicPath);
+                BodyBadFeelDicPath = root + p.getProperty("BodyBadFeelDicPath", BodyBadFeelDicPath);
+                BehaviorDicPath = root + p.getProperty("BehaviorDicPath", BehaviorDicPath);
+                FunctionDicPath = root + p.getProperty("BehaviorDicPath", FunctionDicPath);
+                SymptomDicPath = root + p.getProperty("BehaviorDicPath", SymptomDicPath);
+                MentalFeelDicPath = root + p.getProperty("BehaviorDicPath", MentalFeelDicPath);
+                DiseaseStageDicPath = root + p.getProperty("BehaviorDicPath", DiseaseStageDicPath);
+                TreatMethodDicPath = root + p.getProperty("BehaviorDicPath", TreatMethodDicPath);
+                CheckMethodDicPath = root + p.getProperty("BehaviorDicPath", CheckMethodDicPath);
+
                 CoreDictionaryPath = root + p.getProperty("CoreDictionaryPath", CoreDictionaryPath);
                 CoreDictionaryTransformMatrixDictionaryPath = root + p.getProperty("CoreDictionaryTransformMatrixDictionaryPath", CoreDictionaryTransformMatrixDictionaryPath);
                 BiGramDictionaryPath = root + p.getProperty("BiGramDictionaryPath", BiGramDictionaryPath);

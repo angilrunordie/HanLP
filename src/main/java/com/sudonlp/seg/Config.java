@@ -22,6 +22,13 @@ public class Config
     public boolean diseaseNameRecognize = true;  // 是否对疾病名称进行识别
     public boolean bodyPartRecognize = true;      // 是否对身体部位进行识别
     public boolean bodaBadFeelRecognize = true;  // 是否对身体的不良感受进行识别
+    public boolean behaviorRecognize = true;  // 是否对行为方式进行识别
+    public boolean checkMethodRecognize = true;  // 是否对检查手段进行识别
+    public boolean diseaseStageRecognize = true;  // 是否对病情阶段进行识别
+    public boolean functionNameRecognize = true;  // 是否对功效进行识别
+    public boolean mentalFeelRecognize = true;  // 是否对心理感受进行识别
+    public boolean symptomRecognize = true;  // 是否对症状进行识别
+    public boolean treatMethodRecognize = true;  // 是否对治疗方式进行识别
 
     /**
      * 是否是索引分词（合理地最小分割），indexMode代表全切分词语的最小长度（包含）

@@ -21,6 +21,23 @@ import java.util.regex.Pattern;
 public class Predefine
 {
     /**
+     * 在这里加入医疗词汇的词性标注信息
+     */
+    public final static String foodName = "食物";
+    public final static String bodyPart = "部位";
+    public final static String BodyBadFeel = "不适感受";
+    public final static String diseaseName = "疾病";
+    public final static String[] diseaseNameClassifications = {"疾病-呼吸内科","疾病-消化内科","疾病-神经内科","疾病-内分泌科","疾病-血液科","疾病-风湿科","疾病-肾内科","疾病-心血管内科","疾病-肿瘤科","疾病-妇科","疾病-儿科","疾病-产科","疾病-男科","疾病-皮肤科","疾病-性病科","疾病-肝病","疾病-精神病科","疾病-眼科","疾病-耳鼻喉科","疾病-口腔科","疾病-心胸外科","疾病-脑外科","疾病-肝胆外科","疾病-泌尿外科","疾病-肛肠外科","疾病-骨科","疾病-外伤科","疾病-烧伤科","疾病-乳腺外科","疾病-手外科","疾病-胃肠外科","疾病-血管外科"};
+    public final static String drugName = "药名";
+    public final static String behaviorName = "行为方式";
+    public final static String functionName = "功效";
+    public final static String symptomName = "症状";
+    public final static String mentalFeelName = "心里感受";
+    public final static String diseaseStageName = "病情阶段";
+    public final static String treatMethodName = "治疗方式";
+    public final static String checkMethodName = "检查方式";
+
+    /**
      * hanlp.properties的路径，一般情况下位于classpath目录中。
      * 但在某些极端情况下（不标准的Java虚拟机，用户缺乏相关知识等），允许将其设为绝对路径
      */
@@ -34,7 +51,7 @@ public class Predefine
     public final static int CT_DELIMITER = CT_SINGLE + 1; //delimiter
     /** @deprecated 使用CharType中的相应常量 */
     public final static int CT_CHINESE = CT_SINGLE + 2;   //Chinese Char
-    /** @deprecated 使用CharType中的相应常量 */
+    /** @deprecated 使用CharType中的相应常量
     public final static int CT_LETTER = CT_SINGLE + 3;    //HanYu Pinyin
     /** @deprecated 使用CharType中的相应常量 */
     public final static int CT_NUM = CT_SINGLE + 4;       //HanYu Pinyin

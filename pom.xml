@@ -99,7 +99,7 @@
                 </configuration>
             </plugin>
 
-            <!-- scala 插件 -->
+            <!--&lt;!&ndash; scala 插件 &ndash;&gt;-->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
